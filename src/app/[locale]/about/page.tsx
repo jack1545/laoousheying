@@ -68,7 +68,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
               <div className="relative">
                 <div className="relative h-96 rounded-lg overflow-hidden">
                   <Image
-                    src="/images/头像.webp"
+                    src="/images/photographer-avatar.webp"
                     alt={getTranslation('photographerName')}
                     fill
                     className="object-cover"

@@ -1,25 +1,44 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import os
-from PIL import Image
+import json
+from pathlib import Path
 
-def convert_to_webp(source_folder):
-    for root, _, files in os.walk(source_folder):
-        for file in files:
-            if file.lower().endswith('.jpg') and file.lower() != 'cover.jpg':
-                file_path = os.path.join(root, file)
-                try:
-                    img = Image.open(file_path).convert("RGB")
-                    webp_path = os.path.splitext(file_path)[0] + '.webp'
-                    img.save(webp_path, 'webp')
-                    print(f'Converted {file_path} to {webp_path}')
-                    os.remove(file_path) # Delete original jpg file
-                    print(f'Deleted {file_path}')
-                except Exception as e:
-                    print(f'Could not convert {file_path}: {e}')
+def update_tutorials_cover_images():
+    """更新 tutorials.json 中的封面图片引用"""
+    
+    tutorials_file = "src/data/tutorials.json"
+    
+    with open(tutorials_file, 'r', encoding='utf-8') as f:
+        tutorials = json.load(f)
+    
+    # 为每个教程找到合适的封面图片
+    for tutorial in tutorials:
+        lesson_path = Path("public") / tutorial['featuredImageUrl'][1:]  # 移除开头的 /
+        
+        if not lesson_path.exists():
+            # 如果封面图片不存在，使用该课程文件夹中的第一张图片作为封面
+            lesson_dir = lesson_path.parent
+            
+            if lesson_dir.exists():
+                # 查找该目录下的第一张 webp 图片
+                webp_files = list(lesson_dir.glob("*.webp"))
+                if webp_files:
+                    # 使用第一张图片作为封面
+                    new_cover = "/" + str(webp_files[0].relative_to(Path("public"))).replace("\\", "/")
+                    tutorial['featuredImageUrl'] = new_cover
+                    print(f"更新 {tutorial['title']} 的封面图片: {new_cover}")
+                else:
+                    print(f"警告: {tutorial['title']} 没有找到合适的封面图片")
+    
+    # 保存更新后的文件
+    with open(tutorials_file, 'w', encoding='utf-8') as f:
+        json.dump(tutorials, f, ensure_ascii=False, indent=2)
+    
+    print(f"已更新 {tutorials_file}")
 
-if __name__ == '__main__':
-    image_folders = [
-        'f:\\2025\\project\\laodoublog\\public\\images\\gallery',
-        'f:\\2025\\project\\laodoublog\\public\\images\\blog'
-    ]
-    for folder in image_folders:
-        convert_to_webp(folder)
+if __name__ == "__main__":
+    print("更新教程封面图片...")
+    update_tutorials_cover_images()
+    print("完成!")
