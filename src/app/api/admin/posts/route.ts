@@ -58,6 +58,7 @@ export async function GET() {
     
     return NextResponse.json(allPosts);
   } catch (error) {
+    console.error('Error in GET /api/admin/posts:', error);
     return NextResponse.json(
       { error: 'Failed to fetch posts' },
       { status: 500 }
