@@ -12,27 +12,27 @@ export default function EditPostPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const response = await fetch(`/api/admin/posts/${slug}`);
+        if (response.ok) {
+          const data = await response.json();
+          setPost(data);
+        } else {
+          alert('文章不存在');
+        }
+      } catch (error) {
+        console.error('Failed to fetch post:', error);
+        alert('加载文章失败');
+      } finally {
+        setLoading(false);
+      }
+    };
+
     if (slug) {
       fetchPost();
     }
   }, [slug]);
-
-  const fetchPost = async () => {
-    try {
-      const response = await fetch(`/api/admin/posts/${slug}`);
-      if (response.ok) {
-        const data = await response.json();
-        setPost(data);
-      } else {
-        alert('文章不存在');
-      }
-    } catch (error) {
-      console.error('Failed to fetch post:', error);
-      alert('加载文章失败');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   if (loading) {
     return (

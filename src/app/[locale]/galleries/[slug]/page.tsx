@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Gallery } from '@/types';
+import { Gallery, Photo } from '@/types';
 import ImageModal from '@/components/ImageModal';
 
 // Import sample data
@@ -37,7 +37,7 @@ export default function GalleryPage({ params }: PageProps) {
     notFound();
   }
 
-  const handleImageClick = (photo: { id: string; url: string; title: string; description: string; date: string; location: string }) => {
+  const handleImageClick = (photo: Photo) => {
     setSelectedImage({
       src: photo.url,
       alt: photo.title,

@@ -23,13 +23,15 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
   const { locale } = params;
   const isEnglish = locale === 'en';
   
-  // 尝试获取翻译，如果失败则使用默认文本
-  let t: (key: string) => string;
-  try {
-    t = useTranslations('Blog');
-  } catch {
-    // 如果没有翻译上下文，使用默认文本
-    t = (key: string) => {
+  // 始终调用hook，不要条件调用
+  const t = useTranslations('Blog');
+
+  // 获取翻译文本的辅助函数
+  const getTranslation = (key: string): string => {
+    try {
+      return t(key);
+    } catch {
+      // 如果翻译失败，返回默认文本
       const defaultTexts: { [key: string]: string } = {
         title: isEnglish ? 'Photography Notes & Tutorials' : '摄影手记与教程',
         subtitle: isEnglish ? 'Sharing stories behind photography, recording thoughts and insights during the creative process' : '分享摄影背后的故事，记录创作过程中的思考与感悟',
@@ -40,27 +42,27 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
         noContent: isEnglish ? 'No content available in this category' : '该分类下暂无内容'
       };
       return defaultTexts[key] || key;
-    };
-  }
-  const [selectedCategory, setSelectedCategory] = useState<string>(t('allCategories'));
+    }
+  };
+  const [selectedCategory, setSelectedCategory] = useState<string>(getTranslation('allCategories'));
   
   // Combine blog posts and tutorials
   const allPosts: ExtendedBlogPost[] = [
-    ...blogData.map(post => ({ ...post, category: t('photographyNotes') })),
-    ...tutorialData.map(tutorial => ({ ...tutorial, category: tutorial.category || t('photographyTutorials') }))
+    ...blogData.map(post => ({ ...post, category: getTranslation('photographyNotes') })),
+    ...tutorialData.map(tutorial => ({ ...tutorial, category: tutorial.category || getTranslation('photographyTutorials') }))
   ];
 
   // Get unique categories
-  const categories = [t('allCategories'), ...Array.from(new Set(allPosts.map(post => post.category)))];
+  const categories = [getTranslation('allCategories'), ...Array.from(new Set(allPosts.map(post => post.category).filter((cat): cat is string => Boolean(cat))))];
 
   // Filter posts by category
-  const filteredPosts = selectedCategory === t('allCategories') 
+  const filteredPosts = selectedCategory === getTranslation('allCategories') 
     ? allPosts 
     : allPosts.filter(post => post.category === selectedCategory);
 
   // Sort posts by date (newest first) or by order for tutorials
   const sortedPosts = filteredPosts.sort((a, b) => {
-    if (a.category === t('photographyTutorials') && b.category === t('photographyTutorials')) {
+    if (a.category === getTranslation('photographyTutorials') && b.category === getTranslation('photographyTutorials')) {
       return (a.order || 0) - (b.order || 0);
     }
     return new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime();
@@ -84,10 +86,10 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            {t('title')}
+            {getTranslation('title')}
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8">
-            {t('subtitle')}
+            {getTranslation('subtitle')}
           </p>
         </div>
       </section>
@@ -122,7 +124,7 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
         <div className="container mx-auto px-4">
           {sortedPosts.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-500 text-lg">{t('noContent')}</p>
+              <p className="text-gray-500 text-lg">{getTranslation('noContent')}</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -149,12 +151,12 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
                     {/* Category Badge */}
                     <div className="absolute top-4 left-4">
                       <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                        post.category === t('photographyTutorials') 
+                        post.category === getTranslation('photographyTutorials') 
                           ? 'bg-green-100 text-green-800'
                           : 'bg-blue-100 text-blue-800'
                       }`}>
                         {post.category}
-                        {post.category === t('photographyTutorials') && post.order && (
+                        {post.category === getTranslation('photographyTutorials') && post.order && (
                           <span className="ml-1">#{post.order}</span>
                         )}
                       </span>
@@ -183,7 +185,7 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
                       href={`/${locale}/blog/${post.slug}`}
                       className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold transition-colors"
                     >
-                      {t('readMore')}
+                      {getTranslation('readMore')}
                     </Link>
                   </div>
                 </article>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
+import { Gallery } from '@/types';
 import galleries from '@/data/galleries.json';
 
 // 注意：由于使用了客户端组件，metadata 需要在 layout.tsx 中设置
@@ -21,7 +22,7 @@ const featuredPhotos = galleries.flatMap(gallery =>
 ).slice(0, 18); // 显示18张单张作品
 
 // 瀑布流组件
-function MasonryGrid({ galleries, isSinglePhoto = false, t, currentLocale }: { galleries: Gallery[]; isSinglePhoto?: boolean; t: (key: string) => string; currentLocale: string }) {
+function MasonryGrid({ galleries, isSinglePhoto = false, getTranslation, currentLocale }: { galleries: Gallery[]; isSinglePhoto?: boolean; getTranslation: (key: string) => string; currentLocale: string }) {
   const [imageHeights, setImageHeights] = useState<{ [key: string]: number }>({});
   const [isLoaded, setIsLoaded] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -89,7 +90,7 @@ function MasonryGrid({ galleries, isSinglePhoto = false, t, currentLocale }: { g
                           {gallery.description}
                         </p>
                         <div className="mt-2 text-xs text-gray-300">
-                          {t('featuredPhotos.clickToEnlarge')}
+                          {getTranslation('featuredPhotos.clickToEnlarge')}
                         </div>
                       </div>
                     </div>
@@ -119,7 +120,7 @@ function MasonryGrid({ galleries, isSinglePhoto = false, t, currentLocale }: { g
                           {gallery.description}
                         </p>
                         <div className="mt-2 text-xs text-gray-300">
-                          {gallery.photos.length} {t('featuredGalleries.photosCount')}
+                          {gallery.photos.length} {getTranslation('featuredGalleries.photosCount')}
                         </div>
                       </div>
                     </div>
@@ -167,13 +168,15 @@ export default function Home({ params }: { params: { locale: string } }) {
   const currentLocale = locale;
   const isEnglish = locale === 'en';
   
-  // 尝试获取翻译，如果失败则使用默认文本
-  let t: (key: string) => string;
-  try {
-    t = useTranslations('Homepage');
-  } catch {
-    // 如果没有翻译上下文，使用默认文本
-    t = (key: string) => {
+  // 始终调用hook，不要条件调用
+  const t = useTranslations('Homepage');
+
+  // 获取翻译文本的辅助函数
+  const getTranslation = (key: string): string => {
+    try {
+      return t(key);
+    } catch {
+      // 如果翻译失败，返回默认文本
       const defaultTexts: { [key: string]: string } = {
         'hero.title': isEnglish ? 'Capturing Time Through the Lens' : '用镜头记录时代',
         'hero.subtitle': isEnglish ? 'Ou Weijian, Member of China Photographers Association, 30 years of light and shadow journey, interpreting humanistic feelings through images, witnessing the changes of the times through the lens' : '中国摄影家协会欧伟建，30年光影历程，用影像诠释人文情怀，用镜头见证时代变迁',
@@ -202,8 +205,8 @@ export default function Home({ params }: { params: { locale: string } }) {
         'cta.contactButton': isEnglish ? 'Contact for Collaboration' : '联系合作'
       };
       return defaultTexts[key] || key;
-    };
-  }
+    }
+  };
 
   return (
     <div className="min-h-screen">
@@ -223,23 +226,23 @@ export default function Home({ params }: { params: { locale: string } }) {
         
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            {t('hero.title')}
+            {getTranslation('hero.title')}
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
-            {t('hero.subtitle')}
+            {getTranslation('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href={`/${currentLocale}/galleries`} 
               className="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-              {t('hero.galleryButton')}
+              {getTranslation('hero.galleryButton')}
             </Link>
             <Link 
               href={`/${currentLocale}/about`} 
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors"
             >
-              {t('hero.aboutButton')}
+              {getTranslation('hero.aboutButton')}
             </Link>
           </div>
         </div>
@@ -249,9 +252,9 @@ export default function Home({ params }: { params: { locale: string } }) {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('featuredPhotos.title')}</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">{getTranslation('featuredPhotos.title')}</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              {t('featuredPhotos.subtitle')}
+              {getTranslation('featuredPhotos.subtitle')}
             </p>
           </div>
           
@@ -266,7 +269,7 @@ export default function Home({ params }: { params: { locale: string } }) {
                 photos: [photo]
               }))} 
               isSinglePhoto={true}
-              t={t}
+              getTranslation={getTranslation}
               currentLocale={currentLocale}
             />
           ) : (
@@ -280,7 +283,7 @@ export default function Home({ params }: { params: { locale: string } }) {
               href={`/${currentLocale}/galleries`}
               className="inline-flex items-center text-gray-900 font-semibold hover:text-gray-700 transition-colors"
             >
-              {t('featuredPhotos.viewMore')}
+              {getTranslation('featuredPhotos.viewMore')}
             </Link>
           </div>
         </div>
@@ -290,15 +293,15 @@ export default function Home({ params }: { params: { locale: string } }) {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('featuredGalleries.title')}</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">{getTranslation('featuredGalleries.title')}</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              {t('featuredGalleries.subtitle')}
+              {getTranslation('featuredGalleries.subtitle')}
             </p>
           </div>
           
           {/* 作品集瀑布流布局 */}
           {featuredGalleries && featuredGalleries.length > 0 ? (
-            <MasonryGrid galleries={featuredGalleries} t={t} currentLocale={currentLocale} />
+            <MasonryGrid galleries={featuredGalleries} getTranslation={getTranslation} currentLocale={currentLocale} />
           ) : (
             <div className="text-center py-12">
               <p className="text-gray-500">暂无作品集展示</p>
@@ -310,7 +313,7 @@ export default function Home({ params }: { params: { locale: string } }) {
               href={`/${currentLocale}/galleries`}
               className="inline-flex items-center text-gray-900 font-semibold hover:text-gray-700 transition-colors"
             >
-              {t('featuredGalleries.viewAll')}
+              {getTranslation('featuredGalleries.viewAll')}
             </Link>
           </div>
         </div>
@@ -322,25 +325,25 @@ export default function Home({ params }: { params: { locale: string } }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                {t('about.title')}
+                {getTranslation('about.title')}
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                {t('about.description1')}
+                {getTranslation('about.description1')}
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                {t('about.description2')}
+                {getTranslation('about.description2')}
               </p>
               <Link 
                 href={`/${currentLocale}/about`}
                 className="bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
               >
-                {t('about.learnMore')}
+                {getTranslation('about.learnMore')}
               </Link>
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden">
               <Image
                 src="/images/头像.jpg"
-                alt={t('about.photographerWorkPhoto')}
+                alt={getTranslation('about.photographerWorkPhoto')}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -354,9 +357,9 @@ export default function Home({ params }: { params: { locale: string } }) {
       <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">{t('blog.title')}</h2>
+            <h2 className="text-4xl font-bold mb-4">{getTranslation('blog.title')}</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              {t('blog.subtitle')}
+              {getTranslation('blog.subtitle')}
             </p>
           </div>
           
@@ -403,7 +406,7 @@ export default function Home({ params }: { params: { locale: string } }) {
                     href={`/${currentLocale}/blog`}
                     className="text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200"
                   >
-                    {t('blog.readMore')}
+                    {getTranslation('blog.readMore')}
                   </Link>
                 </div>
               </div>
@@ -415,7 +418,7 @@ export default function Home({ params }: { params: { locale: string } }) {
               href={`/${currentLocale}/blog`}
               className="inline-flex items-center text-white border border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors"
             >
-              {t('blog.viewAllPosts')}
+              {getTranslation('blog.viewAllPosts')}
             </Link>
           </div>
         </div>
@@ -425,16 +428,16 @@ export default function Home({ params }: { params: { locale: string } }) {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {t('cta.title')}
+            {getTranslation('cta.title')}
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            {t('cta.subtitle')}
+            {getTranslation('cta.subtitle')}
           </p>
           <Link 
             href={`/${currentLocale}/contact`}
             className="bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
           >
-            {t('cta.contactButton')}
+            {getTranslation('cta.contactButton')}
           </Link>
         </div>
       </section>

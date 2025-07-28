@@ -7,13 +7,15 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
   const { locale } = params;
   const isEnglish = locale === 'en';
   
-  // 尝试获取翻译，如果失败则使用默认文本
-  let t: (key: string) => string;
-  try {
-    t = useTranslations('Contact');
-  } catch {
-    // 如果没有翻译上下文，使用默认文本
-    t = (key: string) => {
+  // 始终调用hook，不要条件调用
+  const t = useTranslations('Contact');
+
+  // 获取翻译文本的辅助函数
+  const getTranslation = (key: string): string => {
+    try {
+      return t(key);
+    } catch {
+      // 如果翻译失败，返回默认文本
       const defaultTexts: { [key: string]: string } = {
         title: isEnglish ? 'Contact & Collaboration' : '联系合作',
         subtitle: isEnglish ? 'Whether it\'s commercial cooperation, artistic exchange, or photography guidance, feel free to contact me' : '无论是商业合作、艺术交流，还是摄影指导，都欢迎与我联系',
@@ -45,8 +47,8 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
         copyrightDesc3: isEnglish ? 'Legal liability will be pursued for infringement.' : '对于侵权行为，将依法追究其法律责任。'
       };
       return defaultTexts[key] || key;
-    };
-  }
+    }
+  };
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -69,7 +71,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
     
     // Simulate form submission
     setTimeout(() => {
-      setSubmitMessage(t('thankYouMessage'));
+      setSubmitMessage(getTranslation('thankYouMessage'));
       setFormData({ name: '', email: '', subject: '', message: '' });
       setIsSubmitting(false);
     }, 1000);
@@ -82,10 +84,10 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              {t('title')}
+              {getTranslation('title')}
             </h1>
             <p className="text-xl text-gray-600">
-              {t('subtitle')}
+              {getTranslation('subtitle')}
             </p>
           </div>
         </div>
@@ -98,32 +100,32 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
             {/* Contact Info */}
             <div className="lg:col-span-1">
               <div className="bg-white rounded-lg shadow-lg p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('contactInfo')}</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">{getTranslation('contactInfo')}</h2>
                 
                 <div className="space-y-4">
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{t('email')}</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">{getTranslation('email')}</h3>
                     <a href="mailto:photographer@example.com" className="text-blue-600 hover:text-blue-800">
                       2863649353@qq.com
                     </a>
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{t('studioAddress')}</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">{getTranslation('studioAddress')}</h3>
                     <p className="text-gray-600">
                       {isEnglish ? 'Foshan Nanhai District Photographers Association, Guangdong Province' : '广东省佛山市南海区摄影家协会'}
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{t('phone')}</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">{getTranslation('phone')}</h3>
                     <a href="tel:+8613800138000" className="text-blue-600 hover:text-blue-800">
                       +86 186 7659 3468
                     </a>
                   </div>
                   
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{t('wechat')}</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">{getTranslation('wechat')}</h3>
                     <p className="text-gray-600">
                       {isEnglish ? 'WeChat ID: ou154586079' : '微信号：ou154586079'}
                     </p>
@@ -132,7 +134,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                 
                 {/* Social Links */}
                 <div className="mt-8">
-                  <h3 className="font-semibold text-gray-900 mb-4">{t('socialMedia')}</h3>
+                  <h3 className="font-semibold text-gray-900 mb-4">{getTranslation('socialMedia')}</h3>
                   <div className="flex space-x-4">
                     <a href="#" className="text-gray-400 hover:text-gray-600">
                       <span className="sr-only">微博</span>
@@ -160,13 +162,13 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-lg shadow-lg p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('messageForm')}</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">{getTranslation('messageForm')}</h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                        {t('name')} *
+                        {getTranslation('name')} *
                       </label>
                       <input
                         type="text"
@@ -181,7 +183,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                     
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        {t('email')} *
+                        {getTranslation('email')} *
                       </label>
                       <input
                         type="email"
@@ -197,7 +199,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                   
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('subject')} *
+                      {getTranslation('subject')} *
                     </label>
                     <input
                       type="text"
@@ -212,7 +214,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('messageContent')} *
+                      {getTranslation('messageContent')} *
                     </label>
                     <textarea
                       id="message"
@@ -222,7 +224,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                       onChange={handleChange}
                       required
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder={t('messagePlaceholder')}
+                      placeholder={getTranslation('messagePlaceholder')}
                     />
                   </div>
                   
@@ -237,7 +239,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                     disabled={isSubmitting}
                     className="w-full bg-gray-900 text-white py-3 px-4 rounded-md hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? t('sending') : t('sendMessage')}
+                    {isSubmitting ? getTranslation('sending') : getTranslation('sendMessage')}
                   </button>
                 </form>
               </div>
@@ -250,8 +252,8 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('services')}</h2>
-            <p className="text-gray-600">{t('servicesSubtitle')}</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{getTranslation('services')}</h2>
+            <p className="text-gray-600">{getTranslation('servicesSubtitle')}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -259,9 +261,9 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
               <div className="w-16 h-16 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-gray-600 text-sm">{isEnglish ? 'Commercial' : '商业'}</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('commercialPhotography')}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{getTranslation('commercialPhotography')}</h3>
               <p className="text-gray-600">
-                {t('commercialDesc')}
+                {getTranslation('commercialDesc')}
               </p>
             </div>
             
@@ -269,9 +271,9 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
               <div className="w-16 h-16 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-gray-600 text-sm">{isEnglish ? 'Training' : '培训'}</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('photographyTraining')}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{getTranslation('photographyTraining')}</h3>
               <p className="text-gray-600">
-                {t('trainingDesc')}
+                {getTranslation('trainingDesc')}
               </p>
             </div>
             
@@ -279,9 +281,9 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
               <div className="w-16 h-16 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-gray-600 text-sm">{isEnglish ? 'Art' : '艺术'}</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('artisticCollaboration')}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{getTranslation('artisticCollaboration')}</h3>
               <p className="text-gray-600">
-                {t('artisticDesc')}
+                {getTranslation('artisticDesc')}
               </p>
             </div>
           </div>
@@ -292,15 +294,15 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       <section className="py-12 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('copyrightNotice')}</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{getTranslation('copyrightNotice')}</h3>
             <p className="text-gray-600 mb-4">
-              {t('copyrightDesc1')}
+              {getTranslation('copyrightDesc1')}
             </p>
             <p className="text-gray-600 mb-4">
-              {t('copyrightDesc2')}
+              {getTranslation('copyrightDesc2')}
             </p>
             <p className="text-sm text-gray-500">
-              {t('copyrightDesc3')}
+              {getTranslation('copyrightDesc3')}
             </p>
           </div>
         </div>

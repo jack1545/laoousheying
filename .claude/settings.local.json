@@ -8,7 +8,9 @@
       "Bash(npm run dev:*)",
       "Bash(npm run build)",
       "Bash(rm:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(npm run lint)",
+      "Bash(npx eslint:*)"
     ],
     "deny": []
   }

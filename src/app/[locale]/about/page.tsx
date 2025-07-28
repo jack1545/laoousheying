@@ -8,13 +8,15 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
   const { locale } = params;
   const isEnglish = locale === 'en';
   
-  // 尝试获取翻译，如果失败则使用默认文本
-  let t: (key: string) => string;
-  try {
-    t = useTranslations('About');
-  } catch {
-    // 如果没有翻译上下文，使用默认文本
-    t = (key: string) => {
+  // 始终调用hook，不要条件调用
+  const t = useTranslations('About');
+
+  // 获取翻译文本的辅助函数
+  const getTranslation = (key: string): string => {
+    try {
+      return t(key);
+    } catch {
+      // 如果翻译失败，返回默认文本
       const defaultTexts: { [key: string]: string } = {
         title: isEnglish ? 'About the Photographer' : '关于摄影师',
         subtitle: isEnglish ? 'Recording the changes of the times through the lens, interpreting humanistic feelings with light and shadow' : '用镜头记录时代变迁，用光影诠释人文情怀',
@@ -48,10 +50,10 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              {t('title')}
+              {getTranslation('title')}
             </h1>
             <p className="text-xl text-gray-600">
-              {t('subtitle')}
+              {getTranslation('subtitle')}
             </p>
           </div>
         </div>
@@ -67,7 +69,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
                 <div className="relative h-96 rounded-lg overflow-hidden">
                   <Image
                     src="/images/头像.jpg"
-                    alt={t('photographerName')}
+                    alt={getTranslation('photographerName')}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -79,20 +81,20 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
             {/* Profile Info */}
             <div className="order-1 lg:order-2">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                {t('photographerName')}
+                {getTranslation('photographerName')}
               </h2>
               
               <div className="prose prose-lg text-gray-600 mb-6">
                 <p>
-                  {t('description1')}
+                  {getTranslation('description1')}
                 </p>
                 
                 <p>
-                  {t('description2')}
+                  {getTranslation('description2')}
                 </p>
                 
                 <p>
-                  {t('description3')}
+                  {getTranslation('description3')}
                 </p>
               </div>
 
@@ -100,19 +102,19 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="text-center p-4 bg-white rounded-lg shadow">
                   <div className="text-2xl font-bold text-gray-900">40+</div>
-                  <div className="text-sm text-gray-600">{t('yearsExperience')}</div>
+                  <div className="text-sm text-gray-600">{getTranslation('yearsExperience')}</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg shadow">
                   <div className="text-2xl font-bold text-gray-900">20+</div>
-                  <div className="text-sm text-gray-600">{t('personalExhibitions')}</div>
+                  <div className="text-sm text-gray-600">{getTranslation('personalExhibitions')}</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg shadow">
                   <div className="text-2xl font-bold text-gray-900">300+</div>
-                  <div className="text-sm text-gray-600">{t('awardWinningWorks')}</div>
+                  <div className="text-sm text-gray-600">{getTranslation('awardWinningWorks')}</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg shadow">
                   <div className="text-2xl font-bold text-gray-900">5000+</div>
-                  <div className="text-sm text-gray-600">{t('creativeWorks')}</div>
+                  <div className="text-sm text-gray-600">{getTranslation('creativeWorks')}</div>
                 </div>
               </div>
             </div>
@@ -124,18 +126,18 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('majorHonors')}</h2>
-            <p className="text-gray-600">{t('honorsSubtitle')}</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{getTranslation('majorHonors')}</h2>
+            <p className="text-gray-600">{getTranslation('honorsSubtitle')}</p>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {[
-                t('honor1'),
-                t('honor2'),
-                t('honor3'),
-                t('honor4'),
-                t('honor5')
+                getTranslation('honor1'),
+                getTranslation('honor2'),
+                getTranslation('honor3'),
+                getTranslation('honor4'),
+                getTranslation('honor5')
               ].map((honor, index) => (
                 <div key={index} className="p-4 bg-gray-50 rounded-lg">
                   <div className="font-semibold text-gray-900">{honor}</div>
@@ -150,16 +152,16 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('importantExhibitions')}</h2>
-            <p className="text-gray-600">{t('exhibitionsSubtitle')}</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{getTranslation('importantExhibitions')}</h2>
+            <p className="text-gray-600">{getTranslation('exhibitionsSubtitle')}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              t('exhibition1'),
-              t('exhibition2'),
-              t('exhibition3'),
-              t('exhibition4')
+              getTranslation('exhibition1'),
+              getTranslation('exhibition2'),
+              getTranslation('exhibition3'),
+              getTranslation('exhibition4')
             ].map((exhibition, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6">
                 <div className="font-semibold text-gray-900">{exhibition}</div>
@@ -173,16 +175,16 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
       <section className="py-16 bg-gray-900 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">{t('photographyPhilosophy')}</h2>
+            <h2 className="text-3xl font-bold mb-8">{getTranslation('photographyPhilosophy')}</h2>
             <div className="text-xl leading-relaxed space-y-6">
               <p>
-                &ldquo;{t('philosophy1')}&rdquo;
+                &ldquo;{getTranslation('philosophy1')}&rdquo;
               </p>
               <p>
-                &ldquo;{t('philosophy2')}&rdquo;
+                &ldquo;{getTranslation('philosophy2')}&rdquo;
               </p>
               <p>
-                &ldquo;{t('philosophy3')}&rdquo;
+                &ldquo;{getTranslation('philosophy3')}&rdquo;
               </p>
             </div>
           </div>
@@ -193,16 +195,16 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            {t('lookingForward')}
+            {getTranslation('lookingForward')}
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            {t('lookingForwardSubtitle')}
+            {getTranslation('lookingForwardSubtitle')}
           </p>
           <Link 
             href={`/${locale}/contact`}
             className="bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
           >
-            {t('contactMe')}
+            {getTranslation('contactMe')}
           </Link>
         </div>
       </section>

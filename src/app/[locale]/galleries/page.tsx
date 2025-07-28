@@ -12,13 +12,15 @@ export default function GalleriesPage({ params }: { params: { locale: string } }
   const { locale } = params;
   const isEnglish = locale === 'en';
   
-  // 尝试获取翻译，如果失败则使用默认文本
-  let t: (key: string) => string;
-  try {
-    t = useTranslations('Galleries');
-  } catch {
-    // 如果没有翻译上下文，使用默认文本
-    t = (key: string) => {
+  // 始终调用hook，不要条件调用
+  const t = useTranslations('Galleries');
+
+  // 获取翻译文本的辅助函数
+  const getTranslation = (key: string): string => {
+    try {
+      return t(key);
+    } catch {
+      // 如果翻译失败，返回默认文本
       const defaultTexts: { [key: string]: string } = {
         title: isEnglish ? 'Photography Portfolio' : '摄影作品集',
         subtitle: isEnglish ? 'Every photo is a story, every series is a journey' : '每一张照片都是一个故事，每一个系列都是一段旅程',
@@ -26,8 +28,8 @@ export default function GalleriesPage({ params }: { params: { locale: string } }
         viewGallery: isEnglish ? 'View Gallery →' : '查看作品集 →'
       };
       return defaultTexts[key] || key;
-    };
-  }
+    }
+  };
   const galleries: Gallery[] = galleriesData;
 
   return (
@@ -37,10 +39,10 @@ export default function GalleriesPage({ params }: { params: { locale: string } }
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              {t('title')}
+              {getTranslation('title')}
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              {t('subtitle')}
+              {getTranslation('subtitle')}
             </p>
           </div>
         </div>
@@ -79,11 +81,11 @@ export default function GalleriesPage({ params }: { params: { locale: string } }
                     </h3>
                     <div className="flex items-center justify-between">
                       <span className="text-white/90 text-lg font-medium drop-shadow-md">
-                        {gallery.photos.length} {t('photosCount')}
+                        {gallery.photos.length} {getTranslation('photosCount')}
                       </span>
                       <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span className="text-white text-lg font-semibold bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
-                          {t('viewGallery')}
+                          {getTranslation('viewGallery')}
                         </span>
                       </div>
                     </div>
