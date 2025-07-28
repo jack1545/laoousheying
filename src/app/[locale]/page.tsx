@@ -21,7 +21,7 @@ const featuredPhotos = galleries.flatMap(gallery =>
 ).slice(0, 18); // 显示18张单张作品
 
 // 瀑布流组件
-function MasonryGrid({ galleries, isSinglePhoto = false, t, currentLocale }: { galleries: any[]; isSinglePhoto?: boolean; t: any; currentLocale: string }) {
+function MasonryGrid({ galleries, isSinglePhoto = false, t, currentLocale }: { galleries: Gallery[]; isSinglePhoto?: boolean; t: (key: string) => string; currentLocale: string }) {
   const [imageHeights, setImageHeights] = useState<{ [key: string]: number }>({});
   const [isLoaded, setIsLoaded] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -168,13 +168,13 @@ export default function Home({ params }: { params: { locale: string } }) {
   const isEnglish = locale === 'en';
   
   // 尝试获取翻译，如果失败则使用默认文本
-  let t: any;
+  let t: (key: string) => string;
   try {
     t = useTranslations('Homepage');
-  } catch (error) {
+  } catch {
     // 如果没有翻译上下文，使用默认文本
     t = (key: string) => {
-      const defaultTexts: { [key: string]: any } = {
+      const defaultTexts: { [key: string]: string } = {
         'hero.title': isEnglish ? 'Capturing Time Through the Lens' : '用镜头记录时代',
         'hero.subtitle': isEnglish ? 'Ou Weijian, Member of China Photographers Association, 30 years of light and shadow journey, interpreting humanistic feelings through images, witnessing the changes of the times through the lens' : '中国摄影家协会欧伟建，30年光影历程，用影像诠释人文情怀，用镜头见证时代变迁',
         'hero.galleryButton': isEnglish ? 'Gallery' : '作品集',

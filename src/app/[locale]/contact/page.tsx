@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
 export default function ContactPage({ params }: { params: { locale: string } }) {
@@ -9,10 +8,10 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
   const isEnglish = locale === 'en';
   
   // 尝试获取翻译，如果失败则使用默认文本
-  let t: any;
+  let t: (key: string) => string;
   try {
     t = useTranslations('Contact');
-  } catch (error) {
+  } catch {
     // 如果没有翻译上下文，使用默认文本
     t = (key: string) => {
       const defaultTexts: { [key: string]: string } = {

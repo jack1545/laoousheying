@@ -37,7 +37,7 @@ export default function GalleryPage({ params }: PageProps) {
     notFound();
   }
 
-  const handleImageClick = (photo: any) => {
+  const handleImageClick = (photo: { id: string; url: string; title: string; description: string; date: string; location: string }) => {
     setSelectedImage({
       src: photo.url,
       alt: photo.title,

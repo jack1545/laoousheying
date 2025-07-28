@@ -10,7 +10,6 @@ interface BlogPostClientProps {
 export default function BlogPostClient({ post }: BlogPostClientProps) {
   // Generate table of contents for tutorials
   const [headings, setHeadings] = useState<Array<{id: string, text: string, level: number}>>([]);
-  const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
     if (post.category === '摄影教程') {
@@ -38,11 +37,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                   <a
                     key={heading.id}
                     href={`#${heading.id}`}
-                    className={`block text-sm transition-colors ${
-                      activeSection === heading.id
-                        ? 'text-blue-600 font-medium'
-                        : 'text-gray-600 hover:text-gray-900'
-                    } ${
+                    className={`block text-sm transition-colors text-gray-600 hover:text-gray-900 ${
                       heading.level === 3 ? 'pl-4' : ''
                     }`}
                     onClick={(e) => {

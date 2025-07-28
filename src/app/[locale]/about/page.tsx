@@ -9,10 +9,10 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
   const isEnglish = locale === 'en';
   
   // 尝试获取翻译，如果失败则使用默认文本
-  let t: any;
+  let t: (key: string) => string;
   try {
     t = useTranslations('About');
-  } catch (error) {
+  } catch {
     // 如果没有翻译上下文，使用默认文本
     t = (key: string) => {
       const defaultTexts: { [key: string]: string } = {
@@ -31,11 +31,11 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
         importantExhibitions: isEnglish ? 'Important Exhibitions' : '重要展览',
         exhibitionsSubtitle: isEnglish ? 'Exhibition experience in important domestic and foreign art galleries and art institutions' : '国内外重要美术馆及艺术机构展出经历',
         photographyPhilosophy: isEnglish ? 'Photography Philosophy' : '摄影理念',
-        philosophy1: isEnglish ? 'Photography is not only a display of technology, but also an understanding of life and a witness to the times. Every photo should carry the photographer\'s emotions and thoughts.' : '摄影不仅是技术的展现，更是对生活的感悟和对时代的见证。每一张照片都应该承载着摄影师的情感和思考。',
+        philosophy1: isEnglish ? 'Photography is not only a display of technology, but also an understanding of life and a witness to the times. Every photo should carry the photographer&apos;s emotions and thoughts.' : '摄影不仅是技术的展现，更是对生活的感悟和对时代的见证。每一张照片都应该承载着摄影师的情感和思考。',
         philosophy2: isEnglish ? 'I believe that the best photographic works come from real emotions and love for life. Whether it is magnificent mountains and rivers or ordinary life scenes, they all have their unique beauty and stories.' : '我相信最好的摄影作品来自于真实的情感和对生活的热爱。无论是壮丽的山河还是平凡的生活场景，都有其独特的美和故事。',
         philosophy3: isEnglish ? 'Through the lens, I hope to record the changes of this era, so that more people can feel the beauty of life and the pulse of the times through my works.' : '通过镜头，我希望能够记录下这个时代的变迁，让更多人通过我的作品感受到生活的美好和时代发展的脉搏。',
         lookingForward: isEnglish ? 'Looking Forward to Communication' : '期待与您交流',
-        lookingForwardSubtitle: isEnglish ? 'Whether it\'s artistic exchange, commercial cooperation or photography guidance, you are welcome to contact me' : '无论是艺术交流、商业合作还是摄影指导，都欢迎与我联系',
+        lookingForwardSubtitle: isEnglish ? 'Whether it&apos;s artistic exchange, commercial cooperation or photography guidance, you are welcome to contact me' : '无论是艺术交流、商业合作还是摄影指导，都欢迎与我联系',
         contactMe: isEnglish ? 'Contact Me' : '联系我'
       };
       return defaultTexts[key] || key;
@@ -176,13 +176,13 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
             <h2 className="text-3xl font-bold mb-8">{t('photographyPhilosophy')}</h2>
             <div className="text-xl leading-relaxed space-y-6">
               <p>
-                "{t('philosophy1')}"
+                &ldquo;{t('philosophy1')}&rdquo;
               </p>
               <p>
-                "{t('philosophy2')}"
+                &ldquo;{t('philosophy2')}&rdquo;
               </p>
               <p>
-                "{t('philosophy3')}"
+                &ldquo;{t('philosophy3')}&rdquo;
               </p>
             </div>
           </div>
