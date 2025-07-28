@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { Gallery } from '@/types';
@@ -13,7 +12,7 @@ import galleries from '@/data/galleries.json';
 const featuredGalleries = galleries.slice(0, 12);
 
 // 从所有画廊中提取单张作品
-const featuredPhotos = galleries.flatMap(gallery => 
+const featuredPhotos = galleries.flatMap(gallery =>
   gallery.photos.slice(0, 2).map(photo => ({
     ...photo,
     galleryTitle: gallery.title,
@@ -33,7 +32,7 @@ function MasonryGrid({ galleries, isSinglePhoto = false, getTranslation, current
     // 基础宽度为300px，计算对应高度，保持原始比例
     const baseWidth = 300;
     const calculatedHeight = Math.round(baseWidth * aspectRatio);
-    
+
     setImageHeights(prev => ({
       ...prev,
       [gallerySlug]: calculatedHeight
@@ -49,35 +48,30 @@ function MasonryGrid({ galleries, isSinglePhoto = false, getTranslation, current
 
   return (
     <>
-      <div 
+      <div
         ref={gridRef}
-        className={`columns-2 gap-6 space-y-6 transition-opacity duration-500 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
+        className={`columns-2 gap-6 space-y-6 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
       >
         {galleries.map((gallery, index) => {
           const height = imageHeights[gallery.slug] || 300; // 默认高度
-          
+
           return (
-            <div 
-              key={gallery.slug} 
+            <div
+              key={gallery.slug}
               className="group break-inside-avoid mb-6"
             >
               {isSinglePhoto ? (
                 // 单张图片：点击放大
-                <div 
+                <div
                   className="block h-full cursor-pointer"
                   onClick={() => setSelectedImage(gallery.coverPhotoUrl)}
                 >
                   <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                    <Image
+                    <img
                       src={gallery.coverPhotoUrl}
                       alt={gallery.title}
-                      width={300}
-                      height={height}
                       className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      priority={index < 3}
                       onLoad={(e) => {
                         const img = e.target as HTMLImageElement;
                         handleImageLoad(gallery.slug, img);
@@ -86,7 +80,7 @@ function MasonryGrid({ galleries, isSinglePhoto = false, getTranslation, current
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                         <h3 className="text-lg font-bold mb-1">{gallery.title}</h3>
-                        <p className="text-gray-200 text-sm overflow-hidden" style={{display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical'}}>
+                        <p className="text-gray-200 text-sm overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                           {gallery.description}
                         </p>
                         <div className="mt-2 text-xs text-gray-300">
@@ -100,14 +94,10 @@ function MasonryGrid({ galleries, isSinglePhoto = false, getTranslation, current
                 // 图集：点击进入图集页面
                 <Link href={`/${currentLocale}/galleries/${gallery.slug}`} className="block">
                   <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                    <Image
+                    <img
                       src={gallery.coverPhotoUrl}
                       alt={gallery.title}
-                      width={300}
-                      height={height}
                       className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      priority={index < 3}
                       onLoad={(e) => {
                         const img = e.target as HTMLImageElement;
                         handleImageLoad(gallery.slug, img);
@@ -116,7 +106,7 @@ function MasonryGrid({ galleries, isSinglePhoto = false, getTranslation, current
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                         <h3 className="text-lg font-bold mb-1">{gallery.title}</h3>
-                        <p className="text-gray-200 text-sm overflow-hidden" style={{display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical'}}>
+                        <p className="text-gray-200 text-sm overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                           {gallery.description}
                         </p>
                         <div className="mt-2 text-xs text-gray-300">
@@ -131,21 +121,18 @@ function MasonryGrid({ galleries, isSinglePhoto = false, getTranslation, current
           );
         })}
       </div>
-      
+
       {/* 图片放大模态框 */}
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative max-w-full max-h-full">
-            <Image
+            <img
               src={selectedImage}
               alt="放大图片"
-              width={1200}
-              height={800}
               className="object-contain max-w-full max-h-full"
-              sizes="100vw"
             />
             <button
               className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 transition-colors"
@@ -167,7 +154,7 @@ export default function Home({ params }: { params: { locale: string } }) {
   const { locale } = params;
   const currentLocale = locale;
   const isEnglish = locale === 'en';
-  
+
   // 始终调用hook，不要条件调用
   const t = useTranslations('Homepage');
 
@@ -213,7 +200,7 @@ export default function Home({ params }: { params: { locale: string } }) {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0">
-          <div 
+          <div
             className="h-full bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: 'url("/blog/huangshan-notes.webp")',
@@ -223,7 +210,7 @@ export default function Home({ params }: { params: { locale: string } }) {
             <div className="bg-gradient-to-r from-black/60 via-black/40 to-black/60 h-full" />
           </div>
         </div>
-        
+
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             {getTranslation('hero.title')}
@@ -232,14 +219,14 @@ export default function Home({ params }: { params: { locale: string } }) {
             {getTranslation('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href={`/${currentLocale}/galleries`} 
+            <Link
+              href={`/${currentLocale}/galleries`}
               className="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
               {getTranslation('hero.galleryButton')}
             </Link>
-            <Link 
-              href={`/${currentLocale}/about`} 
+            <Link
+              href={`/${currentLocale}/about`}
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors"
             >
               {getTranslation('hero.aboutButton')}
@@ -257,17 +244,17 @@ export default function Home({ params }: { params: { locale: string } }) {
               {getTranslation('featuredPhotos.subtitle')}
             </p>
           </div>
-          
+
           {/* 单张作品瀑布流布局 */}
           {featuredPhotos && featuredPhotos.length > 0 ? (
-            <MasonryGrid 
+            <MasonryGrid
               galleries={featuredPhotos.map(photo => ({
                 slug: `${photo.gallerySlug}-${photo.id}`,
                 title: photo.title || photo.galleryTitle,
                 description: photo.description || `来自《${photo.galleryTitle}》`,
                 coverPhotoUrl: photo.url,
                 photos: [photo]
-              }))} 
+              }))}
               isSinglePhoto={true}
               getTranslation={getTranslation}
               currentLocale={currentLocale}
@@ -277,9 +264,9 @@ export default function Home({ params }: { params: { locale: string } }) {
               <p className="text-gray-500">暂无单张作品展示</p>
             </div>
           )}
-          
+
           <div className="text-center mt-12">
-            <Link 
+            <Link
               href={`/${currentLocale}/galleries`}
               className="inline-flex items-center text-gray-900 font-semibold hover:text-gray-700 transition-colors"
             >
@@ -298,7 +285,7 @@ export default function Home({ params }: { params: { locale: string } }) {
               {getTranslation('featuredGalleries.subtitle')}
             </p>
           </div>
-          
+
           {/* 作品集瀑布流布局 */}
           {featuredGalleries && featuredGalleries.length > 0 ? (
             <MasonryGrid galleries={featuredGalleries} getTranslation={getTranslation} currentLocale={currentLocale} />
@@ -307,9 +294,9 @@ export default function Home({ params }: { params: { locale: string } }) {
               <p className="text-gray-500">暂无作品集展示</p>
             </div>
           )}
-          
+
           <div className="text-center mt-12">
-            <Link 
+            <Link
               href={`/${currentLocale}/galleries`}
               className="inline-flex items-center text-gray-900 font-semibold hover:text-gray-700 transition-colors"
             >
@@ -333,7 +320,7 @@ export default function Home({ params }: { params: { locale: string } }) {
               <p className="text-lg text-gray-600 mb-8">
                 {getTranslation('about.description2')}
               </p>
-              <Link 
+              <Link
                 href={`/${currentLocale}/about`}
                 className="bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
               >
@@ -341,12 +328,10 @@ export default function Home({ params }: { params: { locale: string } }) {
               </Link>
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden">
-              <Image
+              <img
                 src="/photographer-avatar.webp"
                 alt={getTranslation('about.photographerWorkPhoto')}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -362,7 +347,7 @@ export default function Home({ params }: { params: { locale: string } }) {
               {getTranslation('blog.subtitle')}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -386,12 +371,10 @@ export default function Home({ params }: { params: { locale: string } }) {
             ].map((post) => (
               <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden group hover:transform hover:scale-105 transition-all duration-300">
                 <div className="relative h-48 overflow-hidden">
-                  <Image
+                  <img
                     src={post.image}
                     alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -402,7 +385,7 @@ export default function Home({ params }: { params: { locale: string } }) {
                   <p className="text-gray-300 mb-4">
                     {post.description}
                   </p>
-                  <Link 
+                  <Link
                     href={`/${currentLocale}/blog`}
                     className="text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200"
                   >
@@ -412,9 +395,9 @@ export default function Home({ params }: { params: { locale: string } }) {
               </div>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
-            <Link 
+            <Link
               href={`/${currentLocale}/blog`}
               className="inline-flex items-center text-white border border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors"
             >
@@ -433,7 +416,7 @@ export default function Home({ params }: { params: { locale: string } }) {
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             {getTranslation('cta.subtitle')}
           </p>
-          <Link 
+          <Link
             href={`/${currentLocale}/contact`}
             className="bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
           >

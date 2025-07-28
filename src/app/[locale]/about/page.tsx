@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
@@ -67,12 +66,10 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
             <div className="order-2 lg:order-1">
               <div className="relative">
                 <div className="relative h-96 rounded-lg overflow-hidden">
-                  <Image
+                  <img
                     src="/photographer-avatar.webp"
                     alt={getTranslation('photographerName')}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>

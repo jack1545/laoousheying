@@ -1,7 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-
 export default function GalleryTestPage() {
   const testImages = [
     '/gallery/coastal-scenery/bohe-portpanorama.webp',
@@ -20,11 +18,9 @@ export default function GalleryTestPage() {
           <div key={index} className="border rounded-lg p-4">
             <h3 className="font-semibold mb-2">Test {index + 1}</h3>
             <p className="text-sm text-gray-500 mb-2">{src}</p>
-            <Image 
+            <img 
               src={src}
               alt={`Test image ${index + 1}`}
-              width={400}
-              height={192}
               className="w-full h-48 object-cover rounded border"
               onLoad={() => console.log(`✅ Loaded: ${src}`)}
               onError={() => console.error(`❌ Failed: ${src}`)}

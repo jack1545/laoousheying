@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
@@ -71,13 +70,10 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
       {/* Hero Section with Custom Image */}
       <section className="relative h-96 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <Image
+          <img
             src={blogConfig.heroImage.url}
             alt={blogConfig.heroImage.alt}
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50" />
         </div>
@@ -131,12 +127,10 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
                   {/* Featured Image */}
                   <div className="relative h-48">
                     {post.featuredImageUrl ? (
-                      <Image
+                      <img
                         src={post.featuredImageUrl}
                         alt={post.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="w-full h-full object-cover"
                       />
                     ) : (
                       <div className="bg-gradient-to-br from-gray-400 to-gray-600 h-full flex items-center justify-center">

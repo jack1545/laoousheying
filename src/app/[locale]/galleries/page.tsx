@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Gallery } from '@/types';
@@ -59,13 +58,10 @@ export default function GalleriesPage({ params }: { params: { locale: string } }
                 className="group block"
               >
                 <div className="relative overflow-hidden rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105">
-                  <Image
+                  <img
                     src={gallery.coverPhotoUrl}
                     alt={gallery.title}
-                    width={800}
-                    height={600}
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                   
                   {/* 渐变遮罩 */}
