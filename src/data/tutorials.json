@@ -4,7 +4,7 @@
     "title": "第一课 摄影简史、相机的发展及现代摄影的范畴",
     "publishDate": "2024-01-01",
     "excerpt": "了解摄影的发展历程，从最早的暗箱原理到现代数码摄影技术，掌握摄影艺术的基础知识和现代摄影的各个领域。",
-    "featuredImageUrl": "/images/1.第一课  摄影简史、相机的发展及现代摄影的范畴/cover.webp",
+    "featuredImageUrl": "/images/1.第一课  摄影简史、相机的发展及现代摄影的范畴/cover.jpg",
     "images": [
       "/images/1.第一课  摄影简史、相机的发展及现代摄影的范畴/4世界上第一张照片.webp",
       "/images/1.第一课  摄影简史、相机的发展及现代摄影的范畴/5达盖尔银版摄影法.webp",
@@ -23,7 +23,7 @@
     "title": "第二课 相机、附件及各种功能设置",
     "publishDate": "2024-01-08",
     "excerpt": "深入了解相机的构造、各种附件的使用方法，以及相机功能设置的技巧，为实际拍摄打下坚实的技术基础。",
-    "featuredImageUrl": "/images/2.第二课  相机、附件及各种功能设置/cover.webp",
+    "featuredImageUrl": "/images/2.第二课  相机、附件及各种功能设置/cover.jpg",
     "images": [
       "/images/2.第二课  相机、附件及各种功能设置/1单反相机的种类.webp",
       "/images/2.第二课  相机、附件及各种功能设置/2数码相机传感器.webp",
@@ -42,7 +42,7 @@
     "title": "第三课 摄影曝光原理（一）",
     "publishDate": "2024-01-15",
     "excerpt": "学习摄影曝光的基本原理，掌握光圈、快门、ISO三要素的关系，为准确曝光打下理论基础。",
-    "featuredImageUrl": "/images/3.第三课   摄影曝光原理（一）/cover.webp",
+    "featuredImageUrl": "/images/3.第三课   摄影曝光原理（一）/cover.jpg",
     "images": [
       "/images/3.第三课   摄影曝光原理（一）/01摄影三要素.webp",
       "/images/3.第三课   摄影曝光原理（一）/02光圈示意图.webp",
@@ -58,7 +58,7 @@
     "title": "第四课 摄影曝光原理（二）",
     "publishDate": "2024-01-22",
     "excerpt": "深入学习曝光补偿、测光模式、包围曝光等高级曝光技巧，掌握在复杂光线条件下的准确曝光方法。",
-    "featuredImageUrl": "/images/4..第四课  摄影曝光原理（二）/cover.webp",
+    "featuredImageUrl": "/images/4..第四课  摄影曝光原理（二）/cover.jpg",
     "images": [
       "/images/4..第四课  摄影曝光原理（二）/0第四课.webp",
       "/images/4..第四课  摄影曝光原理（二）/曝光补偿示例.webp",
@@ -73,7 +73,7 @@
     "title": "第五课 摄影构图（一）",
     "publishDate": "2024-01-29",
     "excerpt": "掌握摄影构图的基本原理和技巧，学习三分法、对称构图、引导线等经典构图方法，提升照片的视觉效果。",
-    "featuredImageUrl": "/images/5.第五课  摄影构图（一）/cover.webp",
+    "featuredImageUrl": "/images/5.第五课  摄影构图（一）/cover.jpg",
     "images": [
       "/images/5.第五课  摄影构图（一）/0第五课.webp",
       "/images/5.第五课  摄影构图（一）/三分法构图.webp",
@@ -89,7 +89,7 @@
     "title": "第六课 摄影构图（二）",
     "publishDate": "2024-02-05",
     "excerpt": "进一步学习高级构图技巧和创意表现方法，包括框架构图、重复构图、打破常规等创新构图理念。",
-    "featuredImageUrl": "/images/6.第六课  摄影构图（二）/cover.webp",
+    "featuredImageUrl": "/images/6.第六课  摄影构图（二）/cover.jpg",
     "images": [
       "/images/6.第六课  摄影构图（二）/1F第六课.webp",
       "/images/6.第六课  摄影构图（二）/框架构图.webp",
@@ -105,7 +105,7 @@
     "title": "第七课 摄影用光",
     "publishDate": "2024-02-12",
     "excerpt": "深入学习摄影用光技巧，掌握自然光和人工光的运用方法，理解光线的方向、质量和色温对画面效果的影响。",
-    "featuredImageUrl": "/images/7.第七课  摄影用光/cover.webp",
+    "featuredImageUrl": "/images/7.第七课  摄影用光/cover.jpg",
     "images": [
       "/images/7.第七课  摄影用光/0第七课.webp",
       "/images/7.第七课  摄影用光/光线方向示例.webp",
@@ -121,7 +121,7 @@
     "title": "第八课 摄影色彩的运用",
     "publishDate": "2024-02-19",
     "excerpt": "学习色彩理论在摄影中的应用，掌握色彩搭配、色调控制和色彩心理学，创作出更具视觉冲击力的作品。",
-    "featuredImageUrl": "/images/8.第八课  摄影色彩的运用/cover.webp",
+    "featuredImageUrl": "/images/8.第八课  摄影色彩的运用/cover.jpg",
     "images": [
       "/images/8.第八课  摄影色彩的运用/0第八课.webp",
       "/images/8.第八课  摄影色彩的运用/色彩理论.webp",
@@ -131,21 +131,5 @@
     "category": "摄影教程",
     "order": 8,
     "content": "# 第八课 摄影色彩的运用\n\n## 课程概述\n\n学习色彩理论在摄影中的应用，掌握色彩搭配、色调控制和色彩心理学。\n\n## 色彩理论基础\n\n### 色彩三要素\n- 色相（Hue）\n- 饱和度（Saturation）\n- 明度（Brightness）\n\n### 色彩关系\n- 互补色\n- 类似色\n- 三角色\n\n## 色彩搭配\n\n### 单色调\n- 统一性\n- 层次变化\n\n### 对比色\n- 强烈对比\n- 视觉冲击\n\n### 和谐色\n- 柔和过渡\n- 舒适感受\n\n## 色彩心理学\n\n### 色彩情感\n- 暖色调的温暖感\n- 冷色调的宁静感\n\n### 文化含义\n- 不同文化中的色彩象征\n\n## 后期调色\n\n### 色彩校正\n- 白平衡调整\n- 色偏修正\n\n### 风格调色\n- 电影色调\n- 复古风格\n- 清新风格\n\n## 实践技巧\n\n通过案例分析，学习如何在实际拍摄中运用色彩理论。"
-  },
-  {
-    "slug": "photo-analysis-and-creative-thinking",
-    "title": "第九课 作品赏析与创作思路",
-    "publishDate": "2024-02-26",
-    "excerpt": "通过经典摄影作品的赏析，学习如何分析优秀作品的创作手法，培养自己的摄影眼光和创作思维。",
-    "featuredImageUrl": "/images/9.第九课  作品赏析与创作思路/cover.webp",
-    "images": [
-      "/images/9.第九课  作品赏析与创作思路/1.作品赏析/天上人间.webp",
-      "/images/9.第九课  作品赏析与创作思路/1.作品赏析/经典作品1.webp",
-      "/images/9.第九课  作品赏析与创作思路/1.作品赏析/经典作品2.webp",
-      "/images/9.第九课  作品赏析与创作思路/0第九课.webp"
-    ],
-    "category": "摄影教程",
-    "order": 9,
-    "content": "# 第九课 作品赏析与创作思路\n\n## 课程概述\n\n通过经典摄影作品的赏析，学习如何分析优秀作品的创作手法，培养自己的摄影眼光和创作思维。\n\n## 作品赏析方法\n\n### 技术分析\n- 曝光参数\n- 构图方式\n- 用光技巧\n\n### 艺术分析\n- 主题表达\n- 情感传达\n- 视觉效果\n\n### 创意分析\n- 独特视角\n- 创新手法\n- 个人风格\n\n## 经典作品赏析\n\n### 风光摄影大师\n- 安塞尔·亚当斯\n- 马克·阿德勒\n\n### 人像摄影大师\n- 理查德·阿维顿\n- 安妮·莱博维茨\n\n### 纪实摄影大师\n- 亨利·卡蒂埃-布列松\n- 塞巴斯蒂昂·萨尔加多\n\n## 创作思路培养\n\n### 观察力训练\n- 日常观察\n- 细节发现\n\n### 创意思维\n- 联想能力\n- 想象力发挥\n\n### 个人风格\n- 风格探索\n- 特色发展\n\n## 实践指导\n\n### 主题创作\n- 选题方法\n- 系列拍摄\n\n### 作品整理\n- 筛选标准\n- 后期统一\n\n## 作品点评\n\n通过学员作品的点评，提供具体的改进建议和创作指导。"
   }
 ]
