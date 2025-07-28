@@ -53,8 +53,7 @@ function MasonryGrid({ galleries, isSinglePhoto = false, getTranslation, current
         className={`columns-2 gap-6 space-y-6 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
       >
-        {galleries.map((gallery, index) => {
-          const height = imageHeights[gallery.slug] || 300; // 默认高度
+        {galleries.map((gallery) => {
 
           return (
             <div
