@@ -6,12 +6,12 @@
     "excerpt": "了解摄影的发展历程，从最早的暗箱原理到现代数码摄影技术，掌握摄影艺术的基础知识和现代摄影的各个领域。",
     "featuredImageUrl": "/images/lesson-01-photography-history/cover.webp",
     "images": [
-      "/images/lesson-01-photography-history/4世界上第一张照片.webp",
-      "/images/lesson-01-photography-history/11最早的相机.webp",
-      "/images/lesson-01-photography-history/15徕卡原型机.webp",
-      "/images/lesson-01-photography-history/21世界上第一台数码相机，1万像素。.webp",
-      "/images/lesson-01-photography-history/47纯粹主义摄影代表亚当斯.webp",
-      "/images/lesson-01-photography-history/55布列松.webp"
+      "/images/lesson-01-photography-history/image-2097.webp",
+      "/images/lesson-01-photography-history/image-8646.webp",
+      "/images/lesson-01-photography-history/image-164.webp",
+      "/images/lesson-01-photography-history/image-8353.webp",
+      "/images/lesson-01-photography-history/image-5361.webp",
+      "/images/lesson-01-photography-history/image-651.webp"
     ],
     "category": "摄影教程",
     "order": 1,
@@ -24,13 +24,13 @@
     "excerpt": "深入了解相机的构造、各种附件的使用方法，以及相机功能设置的技巧，为实际拍摄打下坚实的技术基础。",
     "featuredImageUrl": "/images/lesson-02-camera-settings/cover.webp",
     "images": [
-      "/images/lesson-02-camera-settings/1单反相机的种类.webp",
-      "/images/lesson-02-camera-settings/2数码相机传感器.webp",
-      "/images/lesson-02-camera-settings/6数码相机的镜头.webp",
-      "/images/lesson-02-camera-settings/7微距镜头.webp",
-      "/images/lesson-02-camera-settings/13鱼眼镜头1.webp",
-      "/images/lesson-02-camera-settings/33移轴镜头1.webp",
-      "/images/lesson-02-camera-settings/47相机的设置.webp"
+      "/images/lesson-02-camera-settings/image-1358.webp",
+      "/images/lesson-02-camera-settings/2digitalcamerasensor.webp",
+      "/images/lesson-02-camera-settings/image-9379.webp",
+      "/images/lesson-02-camera-settings/7macrolens.webp",
+      "/images/lesson-02-camera-settings/13fisheyelens1.webp",
+      "/images/lesson-02-camera-settings/33tilt-shiftlens1.webp",
+      "/images/lesson-02-camera-settings/image-3935.webp"
     ],
     "category": "摄影教程",
     "order": 2,
@@ -43,7 +43,7 @@
     "excerpt": "学习摄影曝光的基本原理，掌握光圈、快门、ISO三要素的关系，为准确曝光打下理论基础。",
     "featuredImageUrl": "/images/lesson-03-exposure-theory-1/cover.webp",
     "images": [
-      "/images/lesson-03-exposure-theory-1/01摄影三要素.webp"
+      "/images/lesson-03-exposure-theory-1/image-7635.webp"
     ],
     "category": "摄影教程",
     "order": 3,
@@ -56,7 +56,7 @@
     "excerpt": "深入学习曝光补偿、测光模式、包围曝光等高级曝光技巧，掌握在复杂光线条件下的准确曝光方法。",
     "featuredImageUrl": "/images/lesson-04-exposure-theory-2/cover.webp",
     "images": [
-      "/images/lesson-04-exposure-theory-2/0第四课.webp"
+      "/images/lesson-04-exposure-theory-2/0lesson-04.webp"
     ],
     "category": "摄影教程",
     "order": 4,
@@ -69,7 +69,7 @@
     "excerpt": "掌握摄影构图的基本原理和技巧，学习三分法、对称构图、引导线等经典构图方法，提升照片的视觉效果。",
     "featuredImageUrl": "/images/lesson-05-composition-1/cover.webp",
     "images": [
-      "/images/lesson-05-composition-1/0第五课.webp"
+      "/images/lesson-05-composition-1/0lesson-05.webp"
     ],
     "category": "摄影教程",
     "order": 5,
@@ -82,7 +82,7 @@
     "excerpt": "进一步学习高级构图技巧和创意表现方法，包括框架构图、重复构图、打破常规等创新构图理念。",
     "featuredImageUrl": "/images/lesson-06-composition-2/cover.webp",
     "images": [
-      "/images/lesson-06-composition-2/1F第六课.webp"
+      "/images/lesson-06-composition-2/1Flesson-06.webp"
     ],
     "category": "摄影教程",
     "order": 6,
@@ -95,7 +95,7 @@
     "excerpt": "深入学习摄影用光技巧，掌握自然光和人工光的运用方法，理解光线的方向、质量和色温对画面效果的影响。",
     "featuredImageUrl": "/images/lesson-07-lighting/cover.webp",
     "images": [
-      "/images/lesson-07-lighting/0第七课.webp"
+      "/images/lesson-07-lighting/0lesson-07.webp"
     ],
     "category": "摄影教程",
     "order": 7,
@@ -108,7 +108,7 @@
     "excerpt": "学习色彩理论在摄影中的应用，掌握色彩搭配、色调控制和色彩心理学，创作出更具视觉冲击力的作品。",
     "featuredImageUrl": "/images/lesson-08-color-theory/cover.webp",
     "images": [
-      "/images/lesson-08-color-theory/0第八课.webp"
+      "/images/lesson-08-color-theory/0lesson-08.webp"
     ],
     "category": "摄影教程",
     "order": 8,
