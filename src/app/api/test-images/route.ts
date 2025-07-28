@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const publicDir = path.join(process.cwd(), 'public');
     const galleryDir = path.join(publicDir, 'gallery');
@@ -24,7 +24,11 @@ export async function GET(request: NextRequest) {
       .map(dirent => dirent.name);
     
     // 检查每个子目录中的文件
-    const result: any = {
+    const result: {
+      galleryDir: string;
+      subdirs: Record<string, string[]>;
+      testFiles: Record<string, { exists: boolean; path: string }>;
+    } = {
       galleryDir,
       subdirs: {},
       testFiles: {}
@@ -41,7 +45,7 @@ export async function GET(request: NextRequest) {
       'gallery/coastal-scenery/bohe-portpanorama.webp',
       'gallery/natural-scenery/meicheng-rainbow.webp',
       'gallery/cultural-heritage/makeup.webp',
-      'gallery/sunset-twilight/sunset-.-fisherman.webp'
+      'gallery/sunset-twilight/sunset-fisherman.webp'
     ];
     
     for (const testFile of testFiles) {
