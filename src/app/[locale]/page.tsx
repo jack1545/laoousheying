@@ -342,7 +342,7 @@ export default function Home({ params }: { params: { locale: string } }) {
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden">
               <Image
-                src="/images/photographer-avatar.webp"
+                src="/photographer-avatar.webp"
                 alt={getTranslation('about.photographerWorkPhoto')}
                 fill
                 className="object-cover"

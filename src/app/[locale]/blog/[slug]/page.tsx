@@ -6,7 +6,6 @@ import BlogPostClient from './BlogPostClient';
 
 // Import data
 import blogData from '@/data/blog.json';
-import tutorialData from '@/data/tutorials.json';
 
 interface PageProps {
   params: {
@@ -15,9 +14,7 @@ interface PageProps {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  // Merge blog and tutorial data
-  const allPosts = [...blogData, ...tutorialData];
-  const post: BlogPost | undefined = allPosts.find(
+  const post: BlogPost | undefined = blogData.find(
     (p) => p.slug === params.slug
   );
 
@@ -49,30 +46,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default function BlogPostPage({ params }: PageProps) {
-  // Merge blog and tutorial data
-  const allPosts = [...blogData, ...tutorialData];
-  const post: BlogPost | undefined = allPosts.find(
+  const post: BlogPost | undefined = blogData.find(
     (p) => p.slug === params.slug
   );
 
   if (!post) {
     notFound();
   }
-
-  // Get related tutorials (previous and next)
-  const getRelatedTutorials = () => {
-    if (post.category !== '摄影教程' || !post.order) return { prev: null, next: null };
-    
-    const tutorials = tutorialData.sort((a, b) => (a.order || 0) - (b.order || 0));
-    const currentIndex = tutorials.findIndex(t => t.slug === post.slug);
-    
-    return {
-      prev: currentIndex > 0 ? tutorials[currentIndex - 1] : null,
-      next: currentIndex < tutorials.length - 1 ? tutorials[currentIndex + 1] : null
-    };
-  };
-  
-  const { prev, next } = getRelatedTutorials();
 
   return (
     <>
@@ -122,47 +102,7 @@ export default function BlogPostPage({ params }: PageProps) {
               <BlogPostClient post={post} />
             </div>
             
-            {/* Tutorial Navigation */}
-            {post.category === '摄影教程' && (prev || next) && (
-              <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">课程导航</h3>
-                <div className="flex justify-between">
-                  {prev ? (
-                    <Link
-                      href={`/zh/blog/${prev.slug}`}
-                      className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
-                    >
-                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                      </svg>
-                      <div>
-                        <div className="text-sm text-gray-500">上一课</div>
-                        <div className="font-medium">{prev.title}</div>
-                      </div>
-                    </Link>
-                  ) : (
-                    <div></div>
-                  )}
-                  
-                  {next ? (
-                    <Link
-                      href={`/zh/blog/${next.slug}`}
-                      className="flex items-center text-blue-600 hover:text-blue-800 transition-colors text-right"
-                    >
-                      <div>
-                        <div className="text-sm text-gray-500">下一课</div>
-                        <div className="font-medium">{next.title}</div>
-                      </div>
-                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </Link>
-                  ) : (
-                    <div></div>
-                  )}
-                </div>
-              </div>
-            )}
+
             
             {/* Back to Blog */}
             <div className="mt-8 text-center">
