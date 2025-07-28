@@ -1,7 +1,6 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "regions": ["hkg1", "sin1"],
   "headers": [
     {
       "source": "/gallery/(.*)",
