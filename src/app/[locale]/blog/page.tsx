@@ -9,7 +9,6 @@ import { BlogPost } from '@/types';
 
 // Import sample data
 import blogData from '@/data/blog.json';
-import tutorialData from '@/data/tutorials.json';
 import blogConfig from '@/data/blog-config.json';
 
 // Note: metadata moved to layout.tsx for client component
@@ -46,10 +45,9 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
   };
   const [selectedCategory, setSelectedCategory] = useState<string>(getTranslation('allCategories'));
   
-  // Combine blog posts and tutorials
+  // Only use blog posts since tutorials are removed
   const allPosts: ExtendedBlogPost[] = [
-    ...blogData.map(post => ({ ...post, category: getTranslation('photographyNotes') })),
-    ...tutorialData.map(tutorial => ({ ...tutorial, category: tutorial.category || getTranslation('photographyTutorials') }))
+    ...blogData.map(post => ({ ...post, category: getTranslation('photographyNotes') }))
   ];
 
   // Get unique categories

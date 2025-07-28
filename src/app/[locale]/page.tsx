@@ -216,7 +216,7 @@ export default function Home({ params }: { params: { locale: string } }) {
           <div 
             className="h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: 'url("/梅城彩虹.webp")',
+              backgroundImage: 'url("/blog/huangshan-notes.webp")',
               backgroundBlendMode: 'overlay'
             }}
           >
