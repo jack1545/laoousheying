@@ -367,19 +367,19 @@ export default function Home({ params }: { params: { locale: string } }) {
             {[
               {
                 id: 1,
-                image: '/images/blog/huangshan-notes.webp',
+                image: '/blog/huangshan-notes.webp',
                 title: isEnglish ? 'Huangshan Photography Notes' : '黄山摄影手记',
                 description: isEnglish ? 'Sharing the experience and techniques of shooting in Huangshan...' : '分享在黄山拍摄的经验和技巧...'
               },
               {
                 id: 2,
-                image: '/images/blog/street-photography.webp',
+                image: '/blog/street-photography.webp',
                 title: isEnglish ? 'Street Photography Insights' : '街头摄影心得',
                 description: isEnglish ? 'Exploring the art of capturing life on the streets...' : '探索街头生活捕捉的艺术...'
               },
               {
                 id: 3,
-                image: '/images/blog/huangshan-notes.webp',
+                image: '/blog/huangshan-notes.webp',
                 title: isEnglish ? 'Light and Shadow Techniques' : '光影技巧分享',
                 description: isEnglish ? 'Understanding the interplay of light and shadow in photography...' : '理解摄影中光影的相互作用...'
               }
