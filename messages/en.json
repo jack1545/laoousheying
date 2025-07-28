@@ -1,0 +1,154 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "galleries": "Galleries",
+    "courses": "Courses",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for doesn't exist or has been moved.",
+    "homeButton": "Go Home",
+    "galleries": "Galleries",
+    "courses": "Courses",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "courses": {
+    "title": "Photography Courses",
+    "subtitle": "Learn photography systematically from basics to advanced",
+    "startLearning": "Start Learning",
+    "lessons": "lessons"
+  },
+  "Homepage": {
+    "hero": {
+      "title": "Capturing Time Through the Lens",
+      "subtitle": "Ou Weijian, Member of China Photography Copyright Association, Guangdong Photographers Association, Foshan Photographers Association, Nanhai Photography Association Director, Royal Photographic Society of Great Britain, Global Photographic Union (GPU), over 40 years of light and shadow journey, interpreting humanistic feelings through images",
+      "galleryButton": "Gallery",
+      "aboutButton": "About Me"
+    },
+    "featuredPhotos": {
+      "title": "Featured Single Works",
+      "subtitle": "Each photograph is a unique moment, carrying different stories and emotions",
+      "clickToEnlarge": "Click to enlarge",
+      "viewMore": "View More Works →"
+    },
+    "featuredGalleries": {
+      "title": "Featured Galleries",
+      "subtitle": "Explore my photographic world, each gallery has its unique theme and style",
+      "photosCount": "photos",
+      "viewAll": "View All Galleries →"
+    },
+    "about": {
+      "title": "About the Photographer",
+      "description1": "Ou Weijian, engaged in photography for more than 40 years, specializing in landscape and documentary photography. His works have been selected and awarded in domestic and international exhibitions and competitions, winning international honors including Gold Medal at Hong Kong Youth Photographic Society International Photography Salon and Silver Medal at Toronto International Photography Competition in Canada.",
+      "description2": "Using the lens to record the changes of the times, interpreting humanistic feelings with light and shadow, committed to conveying Chinese stories through images.",
+      "learnMore": "Learn More",
+      "photographerWorkPhoto": "Photographer at work"
+    },
+    "blog": {
+      "title": "Photography Notes",
+      "subtitle": "Sharing stories behind photography, recording thoughts and insights during the creative process",
+      "blogPost": "Photography Notes",
+      "readMore": "Read Full Article →",
+      "viewAllPosts": "View All Notes"
+    },
+    "cta": {
+      "title": "Let's Capture Beautiful Moments Together",
+      "subtitle": "Whether it's commercial cooperation, artistic exchange, or photography guidance, feel free to contact me",
+      "contactButton": "Contact for Collaboration"
+    }
+  },
+  "Footer": {
+    "brandName": "Lao Ou Photography",
+    "brandTagline": "Recording the times through the lens, interpreting life with light and shadow",
+    "quickLinks": "Quick Links",
+    "galleries": "Galleries",
+    "about": "About Me",
+    "blog": "Photography Notes",
+    "contact": "Contact",
+    "copyright": "Ou Weijian Photography Studio",
+    "rightsReserved": "Unauthorized reproduction or use of any image content is prohibited",
+    "builtBy": "Website built by Ou Yi Team | Focused on photography art communication"
+  },
+  "Galleries": {
+    "title": "Photography Portfolio",
+    "subtitle": "Every photo is a story, every series is a journey",
+    "photosCount": "photos",
+    "viewGallery": "View Gallery →"
+  },
+  "Blog": {
+    "title": "Photography Notes & Tutorials",
+    "subtitle": "Sharing stories behind photography, recording thoughts and insights during the creative process",
+    "allCategories": "All",
+    "photographyNotes": "Photography Notes",
+    "photographyTutorials": "Photography Tutorials",
+    "readMore": "Read More →",
+    "noContent": "No content available in this category"
+  },
+  "About": {
+    "title": "About the Photographer",
+    "subtitle": "Recording the changes of the times through the lens, interpreting humanistic feelings with light and shadow",
+    "photographerName": "Ou Weijian",
+    "description1": "Started learning photography in the late 1970s. Joined Guangdong Wuchuan Photographers Association in 1987, Nanhai Photography Association in 2015, Royal Photographic Society of Great Britain and Global Photographic Union (GPU) in 2016, Foshan Photographers Association in 2017, Guangdong Photographers Association in 2018, and China Photography Copyright Association in 2019.",
+    "description2": "From 2017 to 2020, studied at Beijing Photography Correspondence Institute Guangdong Campus in Basic Class, Advanced Class, and Provincial Member Enhancement Class, receiving the title of Outstanding Student. Works have been selected and awarded in domestic and international exhibitions and competitions multiple times.",
+    "description3": "'Aerial Ballet' won Gold Medal at the 42nd Hong Kong Youth Photographic Society International Photography Salon in 2017, Silver Medal at TIPF (International Photographers Federation) Toronto International Photography Competition in Canada in 2017, and Bronze Medal at Italy Monsummano 'Tribute to Women' International Four-Region Photography Tour in 2018. 'Big Spin' won Gold Medal at Ukraine POKROVA International Photography Exhibition in 2018. Additionally, over 300 works have been selected or awarded in national, provincial, and international photography exhibitions and competitions.",
+    "yearsExperience": "Years Experience",
+     "personalExhibitions": "Personal Exhibitions",
+     "awardWinningWorks": "Award-winning Works",
+     "creativeWorks": "Creative Works",
+    "majorHonors": "Major Honors",
+    "honorsSubtitle": "National and international important photography awards",
+    "honor1": "Gold Medal - 42nd Hong Kong Youth Photographic Society International Photography Salon (2017)",
+    "honor2": "Silver Medal - TIPF Toronto International Photography Competition, Canada (2017)",
+    "honor3": "Bronze Medal - Italy Monsummano 'Tribute to Women' International Four-Region Photography Tour (2018)",
+    "honor4": "Gold Medal - Ukraine POKROVA International Photography Exhibition (2018)",
+    "honor5": "Over 300 works selected and awarded in national, provincial and international photography exhibitions",
+    "importantExhibitions": "Important Exhibitions",
+    "exhibitionsSubtitle": "Exhibition experience in important domestic and foreign art galleries and art institutions",
+    "exhibition1": "Hong Kong Youth Photographic Society International Photography Salon",
+    "exhibition2": "TIPF (International Photographers Federation) Toronto International Photography Competition",
+    "exhibition3": "Italy Monsummano International Four-Region Photography Tour",
+    "exhibition4": "Ukraine POKROVA International Photography Exhibition",
+    "exhibition5": "Various national and provincial photography exhibitions and competitions",
+    "photographyPhilosophy": "Photography Philosophy",
+    "philosophy1": "Photography is not only a display of technology, but also an understanding of life and a witness to the times. Every photo should carry the photographer's emotions and thoughts.",
+    "philosophy2": "I believe that the best photographic works come from real emotions and love for life. Whether it is magnificent mountains and rivers or ordinary life scenes, they all have their unique beauty and stories.",
+    "philosophy3": "Through the lens, I hope to record the changes of this era, so that more people can feel the beauty of life and the pulse of the times through my works.",
+    "lookingForward": "Looking Forward to Communication",
+    "lookingForwardSubtitle": "Whether it's artistic exchange, commercial cooperation or photography guidance, you are welcome to contact me",
+    "contactMe": "Contact Me"
+  },
+  "Contact": {
+    "title": "Contact & Collaboration",
+    "subtitle": "Whether it's commercial cooperation, artistic exchange, or photography guidance, feel free to contact me",
+    "contactInfo": "Contact Information",
+    "email": "Email",
+    "studioAddress": "Studio Address",
+    "phone": "Phone",
+    "wechat": "WeChat",
+    "socialMedia": "Social Media",
+    "messageForm": "Message Form",
+    "name": "Name",
+    "subject": "Subject",
+    "messageContent": "Message Content",
+    "messagePlaceholder": "Please describe your needs or questions in detail...",
+    "sending": "Sending...",
+    "sendMessage": "Send Message",
+    "thankYouMessage": "Thank you for your message! I will reply to you as soon as possible.",
+    "services": "Services",
+    "servicesSubtitle": "Professional photography-related services",
+    "commercialPhotography": "Commercial Photography",
+    "commercialDesc": "Professional photography services for corporate image, product shooting, commercial advertising, etc.",
+    "photographyTraining": "Photography Training",
+    "trainingDesc": "One-on-one guidance, group training, special workshops and other teaching services",
+    "artisticCollaboration": "Artistic Collaboration",
+    "artisticDesc": "Art exhibitions, work collections, cross-border cooperation and other art projects",
+    "copyrightNotice": "Copyright Notice",
+    "copyrightDesc1": "All photographic works on this site are original works by Ou Weijian and are protected by the Copyright Law of the People's Republic of China.",
+    "copyrightDesc2": "Without permission, no one may use, copy, distribute, modify, perform or display any works on this site without authorization. If you need to use them, please obtain authorization through the above contact information.",
+    "copyrightDesc3": "Legal liability will be pursued for infringement."
+  }
+}

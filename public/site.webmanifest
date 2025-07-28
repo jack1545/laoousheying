@@ -1,0 +1,26 @@
+{
+  "name": "欧伟建摄影工作室",
+  "short_name": "欧伟建摄影",
+  "description": "国家级摄影师欧伟建的专业摄影作品集",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1f2937",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["photography", "portfolio", "art"],
+  "lang": "zh-CN"
+}

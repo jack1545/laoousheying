@@ -1,0 +1,153 @@
+{
+  "Navbar": {
+    "home": "首页",
+    "galleries": "作品集",
+    "courses": "摄影教程",
+    "about": "关于我",
+    "blog": "摄影手记",
+    "contact": "联系"
+  },
+  "NotFound": {
+    "title": "页面未找到",
+    "description": "抱歉，您访问的页面不存在或已被移动。",
+    "homeButton": "返回首页",
+    "galleries": "作品集",
+    "courses": "摄影教程",
+    "blog": "摄影手记",
+    "contact": "联系"
+  },
+  "courses": {
+    "title": "摄影教程",
+    "subtitle": "从基础到进阶，系统学习摄影技巧",
+    "startLearning": "开始学习",
+    "lessons": "课时"
+  },
+  "Homepage": {
+    "hero": {
+      "title": "用镜头记录时代",
+      "subtitle": "欧伟建，中国摄影著作权协会会员、广东省摄影家协会会员、佛山市摄影家协会会员、南海摄影家协会理事、英国皇家摄影学会会员、国际摄影联盟(GPU)会员，40余年光影历程，用影像诠释人文情怀",
+      "galleryButton": "作品集",
+      "aboutButton": "关于我"
+    },
+    "featuredPhotos": {
+      "title": "精选单张作品",
+      "subtitle": "每一张照片都是独特的瞬间，承载着不同的故事和情感",
+      "clickToEnlarge": "点击放大查看",
+      "viewMore": "查看更多作品 →"
+    },
+    "featuredGalleries": {
+      "title": "精选作品集",
+      "subtitle": "探索我的摄影世界，每个作品集都有其独特的主题和风格",
+      "photosCount": "张照片",
+      "viewAll": "查看全部作品集 →"
+    },
+    "about": {
+      "title": "关于摄影师",
+      "description1": "欧伟建，从事摄影工作40余年，专注于风光与纪实摄影。作品多次在国内外展赛中入选和获奖，荣获香港青年摄影学会国际摄影沙龙金牌、加拿大多伦多国际摄影大赛银牌等多项国际荣誉。",
+      "description2": "用镜头记录时代变迁，用光影诠释人文情怀，致力于通过影像传递中国故事。",
+      "learnMore": "了解更多",
+      "photographerWorkPhoto": "摄影师工作照"
+    },
+    "blog": {
+      "title": "摄影手记",
+      "subtitle": "分享摄影背后的故事，记录创作过程中的思考与感悟",
+      "blogPost": "摄影手记",
+      "readMore": "阅读全文 →",
+      "viewAllPosts": "查看全部手记"
+    },
+    "cta": {
+      "title": "让我们一起记录美好时光",
+      "subtitle": "无论是商业合作、艺术交流，还是摄影指导，都欢迎与我联系",
+      "contactButton": "联系合作"
+    }
+  },
+  "Footer": {
+    "brandName": "老欧摄影",
+    "brandTagline": "用镜头记录时代，用光影诠释人生",
+    "quickLinks": "快速链接",
+    "galleries": "作品集",
+    "about": "关于我",
+    "blog": "摄影手记",
+    "contact": "联系",
+    "copyright": "欧伟建摄影工作室",
+    "rightsReserved": "未经许可，禁止转载或使用任何图片内容",
+    "builtBy": "网站由欧壹团队搭建 | 专注摄影艺术传播"
+  },
+  "Galleries": {
+    "title": "摄影作品集",
+    "subtitle": "每一张照片都是一个故事，每一个系列都是一段旅程",
+    "photosCount": "张作品",
+    "viewGallery": "查看作品集 →"
+  },
+  "Blog": {
+    "title": "摄影手记与教程",
+    "subtitle": "分享摄影背后的故事，记录创作过程中的思考与感悟",
+    "allCategories": "全部",
+    "photographyNotes": "摄影手记",
+    "photographyTutorials": "摄影教程",
+    "readMore": "阅读全文 →",
+    "noContent": "该分类下暂无内容"
+  },
+  "About": {
+    "title": "关于摄影师",
+    "subtitle": "用镜头记录时代变迁，用光影诠释人文情怀",
+    "photographerName": "欧伟建",
+    "description1": "二十世纪七十年代末开始学习摄影，1987年加入广东吴川摄影家协会，2015年加入南海摄影家协会，2016年加入英国皇家摄影学会及国际摄影联盟(GPU)，2017年加入佛山市摄影家协会，2018年加入广东省摄影家协会，2019年加入中国摄影著作权协会。",
+     "description2": "2017年至2020年在北京摄影函授学院广东校区《基础班》、《专修班》、《省级会员提升班》学习，并获得优秀学员称号，作品多次在国内外展赛中入选和获奖。",
+     "description3": "《空中芭蕾》荣获2017年第四十二届香港青年摄影学会国际摄影沙龙金牌，2017年TIPF(国际摄影师联盟)加拿大多伦多国际摄影大赛银牌，2018年意大利蒙索瓦尔基\"致敬妇女\"国际四地摄影巡回赛铜牌。《大回旋》荣获2018年乌克兰POKROVA国际摄影展金牌。另外还有三百多张次作品在国赛、省赛及国际摄影大展赛中入选或获奖。",
+    "yearsExperience": "从业年限",
+     "personalExhibitions": "个人展览",
+     "awardWinningWorks": "获奖作品",
+     "creativeWorks": "创作作品",
+    "majorHonors": "主要荣誉",
+    "honorsSubtitle": "国家级及国际重要摄影奖项",
+    "honor1": "乌克兰POKROVA国际摄影展金牌 - 《大回旋》作品 (2018)",
+    "honor2": "意大利蒙索瓦尔基国际四地摄影巡回赛铜牌 - 《空中芭蕾》作品 (2018)",
+    "honor3": "TIPF加拿大多伦多国际摄影大赛银牌 - 《空中芭蕾》作品 (2017)",
+    "honor4": "香港青年摄影学会国际摄影沙龙金牌 - 《空中芭蕾》作品 (2017)",
+    "honor5": "北京摄影函授学院优秀学员 - 广东校区基础班、专修班、省级会员提升班 (2017-2020)",
+    "importantExhibitions": "重要展览",
+    "exhibitionsSubtitle": "国内外重要美术馆及艺术机构展出经历",
+    "exhibition1": "中国摄影著作权协会会员作品展 - 中国摄影著作权协会 (2019)",
+    "exhibition2": "广东省摄影家协会会员作品展 - 广东省摄影家协会 (2018)",
+    "exhibition3": "佛山市摄影家协会会员作品展 - 佛山市摄影家协会 (2017)",
+    "exhibition4": "国际摄影联盟(GPU)会员作品展 - 英国皇家摄影学会 (2016)",
+    "photographyPhilosophy": "摄影理念",
+    "philosophy1": "摄影不仅是技术的展现，更是对生活的感悟和对时代的见证。每一张照片都应该承载着摄影师的情感和思考。",
+    "philosophy2": "我相信最好的摄影作品来自于真实的情感和对生活的热爱。无论是壮丽的山河还是平凡的生活场景，都有其独特的美和故事。",
+    "philosophy3": "通过镜头，我希望能够记录下这个时代的变迁，让更多人通过我的作品感受到生活的美好和时代发展的脉搏。",
+    "lookingForward": "期待与您交流",
+    "lookingForwardSubtitle": "无论是艺术交流、商业合作还是摄影指导，都欢迎与我联系",
+    "contactMe": "联系我"
+  },
+  "Contact": {
+    "title": "联系合作",
+    "subtitle": "无论是商业合作、艺术交流，还是摄影指导，都欢迎与我联系",
+    "contactInfo": "联系方式",
+    "email": "邮箱",
+    "studioAddress": "工作室地址",
+    "phone": "电话",
+    "wechat": "微信",
+    "socialMedia": "社交媒体",
+    "messageForm": "留言咨询",
+    "name": "姓名",
+    "subject": "主题",
+    "messageContent": "留言内容",
+    "messagePlaceholder": "请详细描述您的需求或问题...",
+    "sending": "发送中...",
+    "sendMessage": "发送留言",
+    "thankYouMessage": "感谢您的留言！我会尽快回复您。",
+    "services": "服务项目",
+    "servicesSubtitle": "提供专业的摄影相关服务",
+    "commercialPhotography": "商业摄影",
+    "commercialDesc": "企业形象、产品拍摄、商业广告等专业摄影服务",
+    "photographyTraining": "摄影培训",
+    "trainingDesc": "一对一指导、小组培训、专题工作坊等教学服务",
+    "artisticCollaboration": "艺术合作",
+    "artisticDesc": "艺术展览、作品收藏、跨界合作等艺术项目",
+    "copyrightNotice": "版权声明",
+    "copyrightDesc1": "本站所有摄影作品均为欧伟建的原创作品，受《中华人民共和国著作权法》保护。",
+    "copyrightDesc2": "未经许可，任何人不得擅自使用、复制、传播、修改、表演或展示本站的任何作品。如需使用，请通过上述联系方式获得授权。",
+    "copyrightDesc3": "对于侵权行为，将依法追究其法律责任。"
+  }
+}

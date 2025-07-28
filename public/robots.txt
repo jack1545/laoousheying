@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Allow crawling of all content
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Sitemap location
+Sitemap: https://photographer-mingyuan.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/admin/
+
+# Allow all major search engines
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
