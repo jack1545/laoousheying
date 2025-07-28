@@ -216,7 +216,7 @@ export default function Home({ params }: { params: { locale: string } }) {
           <div 
             className="h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: 'url("/梅城彩虹.jpg")',
+              backgroundImage: 'url("/梅城彩虹.webp")',
               backgroundBlendMode: 'overlay'
             }}
           >
@@ -342,7 +342,7 @@ export default function Home({ params }: { params: { locale: string } }) {
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden">
               <Image
-                src="/images/头像.jpg"
+                src="/images/头像.webp"
                 alt={getTranslation('about.photographerWorkPhoto')}
                 fill
                 className="object-cover"
@@ -367,19 +367,19 @@ export default function Home({ params }: { params: { locale: string } }) {
             {[
               {
                 id: 1,
-                image: '/images/blog/huangshan-notes.jpg',
+                image: '/images/blog/huangshan-notes.webp',
                 title: isEnglish ? 'Huangshan Photography Notes' : '黄山摄影手记',
                 description: isEnglish ? 'Sharing the experience and techniques of shooting in Huangshan...' : '分享在黄山拍摄的经验和技巧...'
               },
               {
                 id: 2,
-                image: '/images/blog/street-photography.jpg',
+                image: '/images/blog/street-photography.webp',
                 title: isEnglish ? 'Street Photography Insights' : '街头摄影心得',
                 description: isEnglish ? 'Exploring the art of capturing life on the streets...' : '探索街头生活捕捉的艺术...'
               },
               {
                 id: 3,
-                image: '/images/blog/huangshan-notes.jpg',
+                image: '/images/blog/huangshan-notes.webp',
                 title: isEnglish ? 'Light and Shadow Techniques' : '光影技巧分享',
                 description: isEnglish ? 'Understanding the interplay of light and shadow in photography...' : '理解摄影中光影的相互作用...'
               }

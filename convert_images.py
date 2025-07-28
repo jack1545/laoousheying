@@ -18,16 +18,8 @@ def convert_to_webp(source_folder):
 
 if __name__ == '__main__':
     image_folders = [
-        'f:\\2025\\project\\laodoublog\\public\\images\\1.第一课  摄影简史、相机的发展及现代摄影的范畴',
-        'f:\\2025\\project\\laodoublog\\public\\images\\2.第二课  相机、附件及各种功能设置',
-        'f:\\2025\\project\\laodoublog\\public\\images\\3.第三课   摄影曝光原理（一）',
-        'f:\\2025\\project\\laodoublog\\public\\images\\4..第四课  摄影曝光原理（二）',
-        'f:\\2025\\project\\laodoublog\\public\\images\\5.第五课  摄影构图（一）',
-        'f:\\2025\\project\\laodoublog\\public\\images\\6.第六课  摄影构图（二）',
-        'f:\\2025\\project\\laodoublog\\public\\images\\7.第七课  摄影用光',
-        'f:\\2025\\project\\laodoublog\\public\\images\\8.第八课  摄影色彩的运用',
-        'f:\\2025\\project\\laodoublog\\public\\images\\9.第九课  作品赏析与创作思路',
-        'f:\\2025\\project\\laodoublog\\public\\images\\10.第十课  学员作业点评'
+        'f:\\2025\\project\\laodoublog\\public\\images\\gallery',
+        'f:\\2025\\project\\laodoublog\\public\\images\\blog'
     ]
     for folder in image_folders:
         convert_to_webp(folder)

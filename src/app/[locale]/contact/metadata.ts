@@ -9,7 +9,7 @@ export const contactMetadata: Metadata = {
     url: 'https://photographer-mingyuan.com/contact',
     images: [
       {
-        url: '/og-contact.jpg',
+        url: '/og-contact.webp',
         width: 1200,
         height: 630,
         alt: '联系欧伟建摄影工作室',

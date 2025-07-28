@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: '欧伟建摄影工作室',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.webp',
         width: 1200,
         height: 630,
         alt: '中国国家家协会欧伟建摄影作品展示',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '中国国家家协会欧伟建 - 专业摄影作品集',
     description: '国家级摄影师欧伟建的专业摄影作品集，30年摄影经验，中国摄影家协会会员。',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.webp'],
   },
   robots: {
     index: true,

@@ -3,13 +3,13 @@
     "slug": "coastal-scenery",
     "title": "海岸风光",
     "description": "记录广东沿海地区的壮丽景色，从博贺港的渔船到水东湾的大桥，展现南海之滨的独特魅力。",
-    "coverPhotoUrl": "/images/gallery/coastal-scenery/博贺港全景.jpg",
+    "coverPhotoUrl": "/images/gallery/coastal-scenery/博贺港全景.webp",
     "photos": [
       {
         "id": "cs-001",
         "title": "博贺港全景",
-        "url": "/images/gallery/coastal-scenery/博贺港全景.jpg",
-        "thumbnailUrl": "/images/gallery/coastal-scenery/博贺港全景.jpg",
+        "url": "/images/gallery/coastal-scenery/博贺港全景.webp",
+        "thumbnailUrl": "/images/gallery/coastal-scenery/博贺港全景.webp",
         "description": "博贺港的壮丽全景，渔船点点如繁星",
         "date": "2023-10-15",
         "location": "广东茂名博贺港"
@@ -17,8 +17,8 @@
       {
         "id": "cs-002",
         "title": "水东湾大桥",
-        "url": "/images/gallery/coastal-scenery/水东湾大桥.jpg",
-        "thumbnailUrl": "/images/gallery/coastal-scenery/水东湾大桥.jpg",
+        "url": "/images/gallery/coastal-scenery/水东湾大桥.webp",
+        "thumbnailUrl": "/images/gallery/coastal-scenery/水东湾大桥.webp",
         "description": "水东湾大桥横跨海湾，连接两岸繁华",
         "date": "2023-09-20",
         "location": "广东茂名水东湾"
@@ -26,8 +26,8 @@
       {
         "id": "cs-003",
         "title": "清晨的水东湾",
-        "url": "/images/gallery/coastal-scenery/清晨的水东湾.jpg",
-        "thumbnailUrl": "/images/gallery/coastal-scenery/清晨的水东湾.jpg",
+        "url": "/images/gallery/coastal-scenery/清晨的水东湾.webp",
+        "thumbnailUrl": "/images/gallery/coastal-scenery/清晨的水东湾.webp",
         "description": "水东湾的清晨，薄雾轻纱笼罩海面",
         "date": "2023-08-10",
         "location": "广东茂名水东湾"
@@ -35,8 +35,8 @@
       {
         "id": "cs-004",
         "title": "澳内渔港",
-        "url": "/images/gallery/coastal-scenery/澳内渔港.jpg",
-        "thumbnailUrl": "/images/gallery/coastal-scenery/澳内渔港.jpg",
+        "url": "/images/gallery/coastal-scenery/澳内渔港.webp",
+        "thumbnailUrl": "/images/gallery/coastal-scenery/澳内渔港.webp",
         "description": "澳内渔港的繁忙景象，渔民生活的真实写照",
         "date": "2023-07-25",
         "location": "广东茂名澳内"
@@ -44,8 +44,8 @@
       {
         "id": "cs-005",
         "title": "博贺之晨",
-        "url": "/images/gallery/coastal-scenery/博贺之晨.jpg",
-        "thumbnailUrl": "/images/gallery/coastal-scenery/博贺之晨.jpg",
+        "url": "/images/gallery/coastal-scenery/博贺之晨.webp",
+        "thumbnailUrl": "/images/gallery/coastal-scenery/博贺之晨.webp",
         "description": "博贺港的清晨时光，渔船归港的宁静时刻",
         "date": "2023-06-15",
         "location": "广东茂名博贺港"
@@ -53,8 +53,8 @@
       {
         "id": "cs-006",
         "title": "海边漫步",
-        "url": "/images/gallery/coastal-scenery/海边漫步.jpg",
-        "thumbnailUrl": "/images/gallery/coastal-scenery/海边漫步.jpg",
+        "url": "/images/gallery/coastal-scenery/海边漫步.webp",
+        "thumbnailUrl": "/images/gallery/coastal-scenery/海边漫步.webp",
         "description": "海边悠闲的漫步时光，感受海风的轻抚",
         "date": "2023-05-20",
         "location": "广东茂名海滨"
@@ -65,13 +65,13 @@
     "slug": "sunset-twilight",
     "title": "晚霞夕照",
     "description": "捕捉黄昏时分的绚烂色彩，从海湾的晚霞到渔夫的剪影，记录一天中最美的时光。",
-    "coverPhotoUrl": "/images/gallery/sunset-twilight/海湾的晚霞.jpg",
+    "coverPhotoUrl": "/images/gallery/sunset-twilight/海湾的晚霞.webp",
     "photos": [
       {
         "id": "st-001",
         "title": "海湾的晚霞",
-        "url": "/images/gallery/sunset-twilight/海湾的晚霞.jpg",
-        "thumbnailUrl": "/images/gallery/sunset-twilight/海湾的晚霞.jpg",
+        "url": "/images/gallery/sunset-twilight/海湾的晚霞.webp",
+        "thumbnailUrl": "/images/gallery/sunset-twilight/海湾的晚霞.webp",
         "description": "海湾上空的绚烂晚霞，如诗如画",
         "date": "2023-09-15",
         "location": "广东茂名海湾"
@@ -79,8 +79,8 @@
       {
         "id": "st-002",
         "title": "晚霞渔夫",
-        "url": "/images/gallery/sunset-twilight/晚霞 .  渔夫.jpg",
-        "thumbnailUrl": "/images/gallery/sunset-twilight/晚霞 .  渔夫.jpg",
+        "url": "/images/gallery/sunset-twilight/晚霞 .  渔夫.webp",
+        "thumbnailUrl": "/images/gallery/sunset-twilight/晚霞 .  渔夫.webp",
         "description": "夕阳下渔夫的剪影，诠释劳动之美",
         "date": "2023-08-20",
         "location": "广东茂名渔港"
@@ -88,8 +88,8 @@
       {
         "id": "st-003",
         "title": "世纪晚霞",
-        "url": "/images/gallery/sunset-twilight/世纪晚霞.jpg",
-        "thumbnailUrl": "/images/gallery/sunset-twilight/世纪晚霞.jpg",
+        "url": "/images/gallery/sunset-twilight/世纪晚霞.webp",
+        "thumbnailUrl": "/images/gallery/sunset-twilight/世纪晚霞.webp",
         "description": "世纪之交的绚烂晚霞，见证时代变迁",
         "date": "2023-07-30",
         "location": "广东茂名海滨"
@@ -97,8 +97,8 @@
       {
         "id": "st-004",
         "title": "王村港晚霞",
-        "url": "/images/gallery/sunset-twilight/王村港晚霞.jpg",
-        "thumbnailUrl": "/images/gallery/sunset-twilight/王村港晚霞.jpg",
+        "url": "/images/gallery/sunset-twilight/王村港晚霞.webp",
+        "thumbnailUrl": "/images/gallery/sunset-twilight/王村港晚霞.webp",
         "description": "王村港的美丽晚霞，渔港的宁静时光",
         "date": "2023-06-25",
         "location": "广东茂名王村港"
@@ -106,8 +106,8 @@
       {
         "id": "st-005",
         "title": "醉美晚霞",
-        "url": "/images/gallery/sunset-twilight/醉美晚霞.jpg",
-        "thumbnailUrl": "/images/gallery/sunset-twilight/醉美晚霞.jpg",
+        "url": "/images/gallery/sunset-twilight/醉美晚霞.webp",
+        "thumbnailUrl": "/images/gallery/sunset-twilight/醉美晚霞.webp",
         "description": "醉人的美丽晚霞，天空如火烧云",
         "date": "2023-05-15",
         "location": "广东茂名海岸"
@@ -115,8 +115,8 @@
       {
         "id": "st-006",
         "title": "覃流的晚霞",
-        "url": "/images/gallery/sunset-twilight/覃流的晚霞.jpg",
-        "thumbnailUrl": "/images/gallery/sunset-twilight/覃流的晚霞.jpg",
+        "url": "/images/gallery/sunset-twilight/覃流的晚霞.webp",
+        "thumbnailUrl": "/images/gallery/sunset-twilight/覃流的晚霞.webp",
         "description": "覃流河畔的绚烂晚霞，江河与天空的对话",
         "date": "2023-04-20",
         "location": "广东茂名覃流"
@@ -124,8 +124,8 @@
       {
         "id": "st-007",
         "title": "晚霞中的海滩",
-        "url": "/images/gallery/sunset-twilight/晚霞中的海滩.jpg",
-        "thumbnailUrl": "/images/gallery/sunset-twilight/晚霞中的海滩.jpg",
+        "url": "/images/gallery/sunset-twilight/晚霞中的海滩.webp",
+        "thumbnailUrl": "/images/gallery/sunset-twilight/晚霞中的海滩.webp",
         "description": "晚霞映照下的海滩，金沙与彩云相映成趣",
         "date": "2023-03-15",
         "location": "广东茂名海滩"
@@ -136,13 +136,13 @@
     "slug": "fishing-life",
     "title": "渔家生活",
     "description": "深入渔村，记录渔民的日常生活，从出海捕鱼到归港卸货，展现渔家人的勤劳与智慧。",
-    "coverPhotoUrl": "/images/gallery/fishing-life/日出而作.jpg",
+    "coverPhotoUrl": "/images/gallery/fishing-life/日出而作.webp",
     "photos": [
       {
         "id": "fl-001",
         "title": "日出而作",
-        "url": "/images/gallery/fishing-life/日出而作.jpg",
-        "thumbnailUrl": "/images/gallery/fishing-life/日出而作.jpg",
+        "url": "/images/gallery/fishing-life/日出而作.webp",
+        "thumbnailUrl": "/images/gallery/fishing-life/日出而作.webp",
         "description": "清晨时分，渔民驾船出海捕鱼，日出而作的勤劳身影",
         "date": "2023-08-15",
         "location": "广东茂名渔村"
@@ -150,8 +150,8 @@
       {
         "id": "fl-002",
         "title": "拉大网",
-        "url": "/images/gallery/fishing-life/拉大网.jpg",
-        "thumbnailUrl": "/images/gallery/fishing-life/拉大网.jpg",
+        "url": "/images/gallery/fishing-life/拉大网.webp",
+        "thumbnailUrl": "/images/gallery/fishing-life/拉大网.webp",
         "description": "渔民们齐心协力拉大网，团结协作的精神",
         "date": "2023-07-20",
         "location": "广东茂名渔港"
@@ -159,8 +159,8 @@
       {
         "id": "fl-003",
         "title": "虎头山拉大网",
-        "url": "/images/gallery/fishing-life/虎头山拉大网.jpg",
-        "thumbnailUrl": "/images/gallery/fishing-life/虎头山拉大网.jpg",
+        "url": "/images/gallery/fishing-life/虎头山拉大网.webp",
+        "thumbnailUrl": "/images/gallery/fishing-life/虎头山拉大网.webp",
         "description": "虎头山海域的拉网作业，传统捕鱼方式的传承",
         "date": "2023-06-10",
         "location": "广东茂名虎头山"
@@ -168,8 +168,8 @@
       {
         "id": "fl-004",
         "title": "渔家少女",
-        "url": "/images/gallery/fishing-life/渔家少女.jpg",
-        "thumbnailUrl": "/images/gallery/fishing-life/渔家少女.jpg",
+        "url": "/images/gallery/fishing-life/渔家少女.webp",
+        "thumbnailUrl": "/images/gallery/fishing-life/渔家少女.webp",
         "description": "渔家少女的纯真笑容，渔村新一代的希望",
         "date": "2023-05-25",
         "location": "广东茂名渔村"
@@ -177,8 +177,8 @@
       {
         "id": "fl-005",
         "title": "海中鱼市场",
-        "url": "/images/gallery/fishing-life/海中鱼市场.jpg",
-        "thumbnailUrl": "/images/gallery/fishing-life/海中鱼市场.jpg",
+        "url": "/images/gallery/fishing-life/海中鱼市场.webp",
+        "thumbnailUrl": "/images/gallery/fishing-life/海中鱼市场.webp",
         "description": "海上的鱼市场，渔民们在海中交易新鲜渔获",
         "date": "2023-04-15",
         "location": "广东茂名近海"
@@ -186,8 +186,8 @@
       {
         "id": "fl-006",
         "title": "博贺开渔节",
-        "url": "/images/gallery/cultural-heritage/博贺开渔节.jpg",
-        "thumbnailUrl": "/images/gallery/cultural-heritage/博贺开渔节.jpg",
+        "url": "/images/gallery/cultural-heritage/博贺开渔节.webp",
+        "thumbnailUrl": "/images/gallery/cultural-heritage/博贺开渔节.webp",
         "description": "博贺港开渔节的盛大场面，渔民们的节日庆典",
         "date": "2023-03-20",
         "location": "广东茂名博贺港"
@@ -195,8 +195,8 @@
       {
         "id": "fl-007",
         "title": "海湾的渔排",
-        "url": "/images/gallery/fishing-life/海湾的渔排.jpg",
-        "thumbnailUrl": "/images/gallery/fishing-life/海湾的渔排.jpg",
+        "url": "/images/gallery/fishing-life/海湾的渔排.webp",
+        "thumbnailUrl": "/images/gallery/fishing-life/海湾的渔排.webp",
         "description": "海湾中的渔排养殖，现代渔业的发展",
         "date": "2023-02-15",
         "location": "广东茂名海湾"
@@ -204,8 +204,8 @@
       {
         "id": "fl-008",
         "title": "拖拉机与船",
-        "url": "/images/gallery/natural-scenery/拖拉机与船.jpg",
-        "thumbnailUrl": "/images/gallery/natural-scenery/拖拉机与船.jpg",
+        "url": "/images/gallery/natural-scenery/拖拉机与船.webp",
+        "thumbnailUrl": "/images/gallery/natural-scenery/拖拉机与船.webp",
         "description": "海边的拖拉机与渔船，陆地与海洋的连接",
         "date": "2023-01-10",
         "location": "广东茂名海滨"
@@ -216,13 +216,13 @@
     "slug": "cultural-heritage",
     "title": "文化传承",
     "description": "记录传统文化的传承与发展，从古老的庙宇到民俗表演，展现深厚的文化底蕴。",
-    "coverPhotoUrl": "/images/gallery/cultural-heritage/舞狮表演.jpg",
+    "coverPhotoUrl": "/images/gallery/cultural-heritage/舞狮表演.webp",
     "photos": [
       {
         "id": "ch-001",
         "title": "舞狮表演",
-        "url": "/images/gallery/cultural-heritage/舞狮表演.jpg",
-        "thumbnailUrl": "/images/gallery/cultural-heritage/舞狮表演.jpg",
+        "url": "/images/gallery/cultural-heritage/舞狮表演.webp",
+        "thumbnailUrl": "/images/gallery/cultural-heritage/舞狮表演.webp",
         "description": "传统舞狮表演，民俗文化的精彩展现",
         "date": "2023-02-15",
         "location": "广东茂名"
@@ -230,8 +230,8 @@
       {
         "id": "ch-002",
         "title": "吴川振文康罗庙",
-        "url": "/images/gallery/cultural-heritage/吴川振文康罗庙.jpg",
-        "thumbnailUrl": "/images/gallery/cultural-heritage/吴川振文康罗庙.jpg",
+        "url": "/images/gallery/cultural-heritage/吴川振文康罗庙.webp",
+        "thumbnailUrl": "/images/gallery/cultural-heritage/吴川振文康罗庙.webp",
         "description": "古老的康罗庙，承载着深厚的历史文化",
         "date": "2023-01-20",
         "location": "广东吴川振文"
@@ -239,8 +239,8 @@
       {
         "id": "ch-003",
         "title": "女旦角",
-        "url": "/images/gallery/cultural-heritage/女旦角.jpg",
-        "thumbnailUrl": "/images/gallery/cultural-heritage/女旦角.jpg",
+        "url": "/images/gallery/cultural-heritage/女旦角.webp",
+        "thumbnailUrl": "/images/gallery/cultural-heritage/女旦角.webp",
         "description": "戏曲表演中的女旦角，传统艺术的魅力",
         "date": "2022-12-25",
         "location": "广东茂名"
@@ -248,8 +248,8 @@
       {
         "id": "ch-004",
         "title": "妆容",
-        "url": "/images/gallery/cultural-heritage/妆容.jpg",
-        "thumbnailUrl": "/images/gallery/cultural-heritage/妆容.jpg",
+        "url": "/images/gallery/cultural-heritage/妆容.webp",
+        "thumbnailUrl": "/images/gallery/cultural-heritage/妆容.webp",
         "description": "精致的戏曲妆容，传统艺术的细节之美",
         "date": "2022-11-30",
         "location": "广东茂名"
@@ -257,8 +257,8 @@
       {
         "id": "ch-005",
         "title": "巡游中的老师",
-        "url": "/images/gallery/cultural-heritage/巡游中的老师.jpg",
-        "thumbnailUrl": "/images/gallery/cultural-heritage/巡游中的老师.jpg",
+        "url": "/images/gallery/cultural-heritage/巡游中的老师.webp",
+        "thumbnailUrl": "/images/gallery/cultural-heritage/巡游中的老师.webp",
         "description": "文化巡游中的老师，传承文化的使者",
         "date": "2022-10-15",
         "location": "广东茂名"
@@ -269,13 +269,13 @@
     "slug": "natural-scenery",
     "title": "自然风光",
     "description": "捕捉大自然的壮美景色，从彩虹桥梁到白鹭觅食，展现自然界的和谐之美。",
-    "coverPhotoUrl": "/images/gallery/natural-scenery/梅城彩虹.jpg",
+    "coverPhotoUrl": "/images/gallery/natural-scenery/梅城彩虹.webp",
     "photos": [
       {
         "id": "ns-001",
         "title": "梅城彩虹",
-        "url": "/images/gallery/natural-scenery/梅城彩虹.jpg",
-        "thumbnailUrl": "/images/gallery/natural-scenery/梅城彩虹.jpg",
+        "url": "/images/gallery/natural-scenery/梅城彩虹.webp",
+        "thumbnailUrl": "/images/gallery/natural-scenery/梅城彩虹.webp",
         "description": "梅城上空的美丽彩虹，雨后天晴的奇观",
         "date": "2023-06-15",
         "location": "广东梅州"
@@ -283,8 +283,8 @@
       {
         "id": "ns-002",
         "title": "白鹭觅食",
-        "url": "/images/gallery/natural-scenery/白鹭觅食.jpg",
-        "thumbnailUrl": "/images/gallery/natural-scenery/白鹭觅食.jpg",
+        "url": "/images/gallery/natural-scenery/白鹭觅食.webp",
+        "thumbnailUrl": "/images/gallery/natural-scenery/白鹭觅食.webp",
         "description": "白鹭在水中觅食的优雅身姿，自然生态的和谐",
         "date": "2023-05-20",
         "location": "广东茂名湿地"
@@ -292,8 +292,8 @@
       {
         "id": "ns-003",
         "title": "三江汇流",
-        "url": "/images/gallery/natural-scenery/三江汇流.jpg",
-        "thumbnailUrl": "/images/gallery/natural-scenery/三江汇流.jpg",
+        "url": "/images/gallery/natural-scenery/三江汇流.webp",
+        "thumbnailUrl": "/images/gallery/natural-scenery/三江汇流.webp",
         "description": "三江汇流的壮观景象，江河交汇的自然奇观",
         "date": "2023-04-25",
         "location": "广东茂名"
@@ -301,8 +301,8 @@
       {
         "id": "ns-004",
         "title": "双桥在望",
-        "url": "/images/gallery/natural-scenery/双桥在望.jpg",
-        "thumbnailUrl": "/images/gallery/natural-scenery/双桥在望.jpg",
+        "url": "/images/gallery/natural-scenery/双桥在望.webp",
+        "thumbnailUrl": "/images/gallery/natural-scenery/双桥在望.webp",
         "description": "远山双桥的美丽景色，人工与自然的和谐统一",
         "date": "2023-03-30",
         "location": "广东茂名"
@@ -310,8 +310,8 @@
       {
         "id": "ns-005",
         "title": "通衢",
-        "url": "/images/gallery/natural-scenery/通衢.jpg",
-        "thumbnailUrl": "/images/gallery/natural-scenery/通衢.jpg",
+        "url": "/images/gallery/natural-scenery/通衢.webp",
+        "thumbnailUrl": "/images/gallery/natural-scenery/通衢.webp",
         "description": "四通八达的道路，连接城乡的交通要道",
         "date": "2023-02-20",
         "location": "广东茂名"
@@ -319,8 +319,8 @@
       {
         "id": "ns-006",
         "title": "亭亭玉立",
-        "url": "/images/gallery/natural-scenery/亭亭玉立.jpg",
-        "thumbnailUrl": "/images/gallery/natural-scenery/亭亭玉立.jpg",
+        "url": "/images/gallery/natural-scenery/亭亭玉立.webp",
+        "thumbnailUrl": "/images/gallery/natural-scenery/亭亭玉立.webp",
         "description": "亭亭玉立的荷花，出淤泥而不染的高洁品格",
         "date": "2023-01-15",
         "location": "广东茂名公园"
