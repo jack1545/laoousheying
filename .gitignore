@@ -41,6 +41,5 @@ yarn-error.log*
 next-env.d.ts
 node_modules
 
-# large image files
-public/images/blog/huangshan-notes.jpg
-public/images/blog/street-photography.jpg
+# ignore all images
+public/images/
