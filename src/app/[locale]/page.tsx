@@ -48,9 +48,79 @@ function MasonryGrid({ galleries, isSinglePhoto = false, getTranslation, current
 
   return (
     <>
+      {/* 移动端：水平滑动布局 */}
+      <div className={`md:hidden transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          {galleries.map((gallery) => (
+            <div
+              key={gallery.slug}
+              className="group flex-shrink-0 w-72"
+            >
+              {isSinglePhoto ? (
+                // 单张图片：点击放大
+                <div
+                  className="block h-full cursor-pointer"
+                  onClick={() => setSelectedImage(gallery.coverPhotoUrl)}
+                >
+                  <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                    <img
+                      src={gallery.coverPhotoUrl}
+                      alt={gallery.title}
+                      className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                      onLoad={(e) => {
+                        const img = e.target as HTMLImageElement;
+                        handleImageLoad(gallery.slug, img);
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <h3 className="text-lg font-bold mb-1">{gallery.title}</h3>
+                        <p className="text-gray-200 text-sm overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                          {gallery.description}
+                        </p>
+                        <div className="mt-2 text-xs text-gray-300">
+                          {getTranslation('featuredPhotos.clickToEnlarge')}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                // 图集：点击进入图集页面
+                <Link href={`/${currentLocale}/galleries/${gallery.slug}`} className="block">
+                  <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                    <img
+                      src={gallery.coverPhotoUrl}
+                      alt={gallery.title}
+                      className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                      onLoad={(e) => {
+                        const img = e.target as HTMLImageElement;
+                        handleImageLoad(gallery.slug, img);
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <h3 className="text-lg font-bold mb-1">{gallery.title}</h3>
+                        <p className="text-gray-200 text-sm overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                          {gallery.description}
+                        </p>
+                        <div className="mt-2 text-xs text-gray-300">
+                          {gallery.photos.length} {getTranslation('featuredGalleries.photosCount')}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 桌面端：瀑布流布局 */}
       <div
         ref={gridRef}
-        className={`columns-2 gap-6 space-y-6 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'
+        className={`hidden md:block columns-2 gap-6 space-y-6 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
       >
         {galleries.map((gallery) => {
