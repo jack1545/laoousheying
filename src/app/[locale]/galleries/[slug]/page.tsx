@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
+
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Gallery, Photo } from '@/types';
@@ -62,7 +62,7 @@ export default function GalleryPage({ params }: PageProps) {
             <span className="mx-2">/</span>
             <span className="text-gray-600">{gallery.title}</span>
           </nav>
-          
+
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               {gallery.title}
@@ -82,19 +82,16 @@ export default function GalleryPage({ params }: PageProps) {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {gallery.photos.map((photo) => (
-              <div 
-                key={photo.id} 
+              <div
+                key={photo.id}
                 className="group cursor-pointer"
                 onClick={() => handleImageClick(photo)}
               >
                 <div className="relative overflow-hidden rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105">
-                  <Image
+                  <img
                     src={photo.url}
                     alt={photo.title}
-                    width={600}
-                    height={400}
                     className="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700"
-                    priority={false}
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end">
                     <div className="p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
@@ -118,7 +115,7 @@ export default function GalleryPage({ params }: PageProps) {
           <div className="flex justify-between items-center">
             <div className="flex-1">
               {prevGallery && (
-                <Link 
+                <Link
                   href={`/galleries/${prevGallery.slug}`}
                   className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
                 >
@@ -132,9 +129,9 @@ export default function GalleryPage({ params }: PageProps) {
                 </Link>
               )}
             </div>
-            
+
             <div className="flex-1 text-center">
-              <Link 
+              <Link
                 href="/galleries"
                 className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
               >
@@ -144,10 +141,10 @@ export default function GalleryPage({ params }: PageProps) {
                 返回作品集
               </Link>
             </div>
-            
+
             <div className="flex-1 text-right">
               {nextGallery && (
-                <Link 
+                <Link
                   href={`/galleries/${nextGallery.slug}`}
                   className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
                 >
@@ -164,7 +161,7 @@ export default function GalleryPage({ params }: PageProps) {
           </div>
         </div>
       </section>
-      
+
       {/* Image Modal */}
       {selectedImage && (
         <ImageModal
